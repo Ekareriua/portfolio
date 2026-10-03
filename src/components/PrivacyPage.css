@@ -38,7 +38,6 @@
 }
 
 .privacy__title {
-  margin-top: 0.75rem;
   font-size: clamp(2.25rem, 6vw, 3rem);
 }
 
@@ -48,34 +47,11 @@
   color: var(--color-text-3);
 }
 
-.privacy__lead {
-  margin-top: 2rem;
-  font-size: 1.125rem;
-}
-
-.privacy h2 {
-  margin-top: 2.75rem;
-  font-size: 1.375rem;
-}
-
-.privacy p,
-.privacy ul {
-  margin-top: 0.875rem;
+.privacy p:not(.privacy__updated) {
+  margin-top: 1.25rem;
+  font-size: 1.0625rem;
   line-height: 1.7;
   color: var(--color-text-2);
-}
-
-.privacy ul {
-  padding-left: 1.25rem;
-}
-
-.privacy li + li {
-  margin-top: 0.5rem;
-}
-
-.privacy strong {
-  color: var(--color-text);
-  font-weight: 600;
 }
 
 .privacy a {
