@@ -6,9 +6,9 @@ const photoUrl = (id: string) =>
   `https://images.unsplash.com/${id}?w=700&q=75&auto=format&fit=crop`
 
 // Each column shows all five photos in a different order, so the frame is never empty.
-// The orders are chosen so the same photo never ends up side by side.
-const leftOrder = [0, 2, 4, 1, 3]
-const rightOrder = [3, 4, 1, 0, 2]
+// The orders are chosen so the same photo doesn't end up side by side.
+const leftOrder = [0, 1, 2, 3, 4]
+const rightOrder = [3, 4, 1, 2, 0]
 
 const clamp = (value: number) => Math.min(1, Math.max(0, value))
 
@@ -42,7 +42,9 @@ export function HeroGallery({ sectionRef }: HeroGalleryProps) {
       target = clamp(window.scrollY / range)
     }
 
-    // Move the columns for a given progress: left goes up, right comes down
+    // Move the columns for a given progress: left goes up, right comes down.
+    // The right column always sits half a photo lower than the left, so the
+    // tiles stay staggered and never line up into a grid.
     function apply(progress: number) {
       const gallery = galleryRef.current
       const left = leftRef.current
@@ -52,9 +54,10 @@ export function HeroGallery({ sectionRef }: HeroGalleryProps) {
       // The columns travel exactly two photos (photo height + gap), on every screen size
       const photos = left.children as HTMLCollectionOf<HTMLElement>
       const step = photos[1].offsetTop - photos[0].offsetTop
-      const travel = Math.min(step * 2, left.offsetHeight - gallery.clientHeight)
+      const stagger = step / 2
+      const travel = Math.min(step * 2, left.offsetHeight - gallery.clientHeight - stagger)
       left.style.transform = `translate3d(0, ${-progress * travel}px, 0)`
-      right.style.transform = `translate3d(0, ${-(1 - progress) * travel}px, 0)`
+      right.style.transform = `translate3d(0, ${-(1 - progress) * travel - stagger}px, 0)`
     }
 
     function draw() {
