@@ -1,4 +1,3 @@
-import { contact } from '../data/links'
 import './Hero.css'
 
 // Photo by Nathan Dumlao on Unsplash (free to use under the Unsplash License):
@@ -21,24 +20,6 @@ export function Hero() {
             I build modern, responsive websites and web applications with JavaScript,
             TypeScript and React.
           </p>
-          <div className="hero__actions">
-            {contact.email && (
-              <a href={`mailto:${contact.email}`} className="button button--primary">
-                Email me
-              </a>
-            )}
-            {contact.linkedin && (
-              <a
-                href={contact.linkedin}
-                className="button button--secondary"
-                target="_blank"
-                rel="noreferrer"
-              >
-                LinkedIn
-                <span className="visually-hidden"> (opens in a new tab)</span>
-              </a>
-            )}
-          </div>
           <p className="hero__status">Open to new website projects</p>
         </div>
 
