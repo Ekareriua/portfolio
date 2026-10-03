@@ -8,6 +8,15 @@
   align-items: center;
 }
 
+/* Phones and tablets: extra room below the photos, so they stay stuck on
+   screen (and keep moving) for about one more screen of scrolling */
+@media (max-width: 59.99rem) {
+  .hero__inner::after {
+    content: '';
+    height: 80svh;
+  }
+}
+
 .hero__content {
   animation: fade-in 0.5s ease both;
 }
@@ -56,7 +65,7 @@
    while you scroll through the extra height (that's when the photos move). */
 @media (min-width: 60rem) {
   .hero {
-    height: calc(100svh - var(--header-height) + 70vh);
+    height: calc(100svh - var(--header-height) + 150vh);
     padding-block: 0;
   }
 

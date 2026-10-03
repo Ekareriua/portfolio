@@ -3,12 +3,19 @@ import { heroPhotos } from '../data/heroPhotos'
 import './HeroGallery.css'
 
 const photoUrl = (id: string) =>
-  `https://images.unsplash.com/${id}?w=700&q=75&auto=format&fit=crop`
+  `https://images.unsplash.com/${id}?w=600&q=75&auto=format&fit=crop`
 
-// Each column shows five photos (numbers are positions in heroPhotos).
-// The orders are chosen so the same photo never appears side by side.
-const leftOrder = [0, 1, 2, 3, 4]
-const rightOrder = [0, 3, 5, 6, 4]
+// How many pixels the photos move for each pixel you scroll.
+// Higher = faster; lower = calmer.
+const SPEED = 0.42
+
+// Each column is a long strip that repeats its photos, so plenty go by
+const PHOTOS_PER_COLUMN = 12
+
+// Photo shapes (width / height). 4 / 5 is the tallest; the rest are shorter.
+// Each column uses a different pattern so the two never line up into a grid.
+const leftShapes = [4 / 5, 1, 4 / 3, 4 / 5, 5 / 4, 1]
+const rightShapes = [1, 4 / 5, 5 / 4, 4 / 3, 4 / 5, 1]
 
 const clamp = (value: number) => Math.min(1, Math.max(0, value))
 
@@ -28,6 +35,7 @@ export function HeroGallery({ sectionRef }: HeroGalleryProps) {
     // Respect visitors who prefer less motion: keep the photos still
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
 
+    let range = 1 // how far you scroll while the photos move (the hero's height)
     let target = 0 // where the scroll says we should be (0 → 1)
     let current = 0 // where we are now; eases towards target for a smooth glide
     let frame = 0
@@ -37,24 +45,23 @@ export function HeroGallery({ sectionRef }: HeroGalleryProps) {
       if (!section) return
       // Progress runs from the top of the page until the hero has scrolled
       // completely out of view, so the photos keep moving the whole time
-      target = clamp(window.scrollY / section.offsetHeight)
+      range = section.offsetHeight
+      target = clamp(window.scrollY / range)
     }
 
-    // Move the columns for a given progress: left goes up, right comes down.
-    // The right column is offset from the left so the tiles stay staggered
-    // and don't line up into a grid when the photos come to rest.
+    // Move the columns for a given progress: left goes up, right comes down
     function apply(progress: number) {
       const gallery = galleryRef.current
       const left = leftRef.current
       const right = rightRef.current
       if (!gallery || !left || !right) return
 
-      // Measured in "steps" (one photo height + gap) so it works on every screen size.
-      // travel = how far each column moves; lower = slower, calmer movement.
-      const photos = left.children as HTMLCollectionOf<HTMLElement>
-      const step = photos[1].offsetTop - photos[0].offsetTop
-      const stagger = step * 0.96
-      const travel = Math.min(step * 1.54, left.offsetHeight - gallery.clientHeight - stagger)
+      // The right column starts a little lower so the tiles are staggered
+      const stagger = gallery.clientWidth * 0.12
+      // Travel follows the scroll length, but never past the end of the strips
+      const longest = Math.min(left.offsetHeight, right.offsetHeight)
+      const travel = Math.min(range * SPEED, longest - gallery.clientHeight - stagger)
+
       left.style.transform = `translate3d(0, ${-progress * travel}px, 0)`
       right.style.transform = `translate3d(0, ${-(1 - progress) * travel - stagger}px, 0)`
     }
@@ -85,11 +92,15 @@ export function HeroGallery({ sectionRef }: HeroGalleryProps) {
     }
   }, [sectionRef])
 
-  const column = (order: number[], ref: RefObject<HTMLDivElement | null>) => (
+  const column = (photos: string[], shapes: number[], ref: RefObject<HTMLDivElement | null>) => (
     <div className="hero-gallery__column" ref={ref}>
-      {order.map((photoIndex) => (
-        <div key={photoIndex} className="hero-gallery__photo">
-          <img src={photoUrl(heroPhotos[photoIndex])} alt="" loading="eager" />
+      {Array.from({ length: PHOTOS_PER_COLUMN }, (_, i) => (
+        <div
+          key={i}
+          className="hero-gallery__photo"
+          style={{ aspectRatio: shapes[i % shapes.length] }}
+        >
+          <img src={photoUrl(photos[i % photos.length])} alt="" />
         </div>
       ))}
     </div>
@@ -98,8 +109,8 @@ export function HeroGallery({ sectionRef }: HeroGalleryProps) {
   return (
     // Decorative scenery, so it's hidden from screen readers
     <div className="hero-gallery" ref={galleryRef} aria-hidden="true">
-      {column(leftOrder, leftRef)}
-      {column(rightOrder, rightRef)}
+      {column(heroPhotos.left, leftShapes, leftRef)}
+      {column(heroPhotos.right, rightShapes, rightRef)}
     </div>
   )
 }
