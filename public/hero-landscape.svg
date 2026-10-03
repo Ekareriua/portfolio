@@ -1,316 +1,341 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-label="Mountains and pine forest reflected in a calm lake">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-label="Snowy mountains and pine forest reflected in a turquoise lake">
   <defs>
-    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#7fa7cf"/>
-      <stop offset="0.55" stop-color="#bcd3e8"/>
-      <stop offset="1" stop-color="#e6eef5"/>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="352" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#3f7fcb"/>
+      <stop offset="0.55" stop-color="#8fbde9"/>
+      <stop offset="1" stop-color="#dcebf8"/>
     </linearGradient>
-    <linearGradient id="far" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#8b9fb4"/>
-      <stop offset="1" stop-color="#b9c8d6"/>
+    <linearGradient id="far" x1="0" y1="115" x2="0" y2="300" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="0.22" stop-color="#e6edf5"/>
+      <stop offset="0.5" stop-color="#a5b9d0"/>
+      <stop offset="1" stop-color="#6d87a6"/>
     </linearGradient>
-    <linearGradient id="mid" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#6f8497"/>
-      <stop offset="1" stop-color="#93a6b6"/>
+    <linearGradient id="mid" x1="0" y1="220" x2="0" y2="330" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#e6edf5"/>
+      <stop offset="0.3" stop-color="#8ea3bc"/>
+      <stop offset="1" stop-color="#4e657f"/>
     </linearGradient>
-    <linearGradient id="big" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#6c7b88"/>
-      <stop offset="0.6" stop-color="#4f5f6c"/>
-      <stop offset="1" stop-color="#3f4d58"/>
+    <linearGradient id="big" x1="0" y1="60" x2="0" y2="352" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="0.25" stop-color="#dfe6ee"/>
+      <stop offset="0.5" stop-color="#8496ab"/>
+      <stop offset="1" stop-color="#46586c"/>
     </linearGradient>
-    <linearGradient id="lake" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#7f9db6"/>
-      <stop offset="1" stop-color="#3e5c72"/>
+    <linearGradient id="lake" x1="0" y1="352" x2="0" y2="500" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#5aa3b9"/>
+      <stop offset="0.5" stop-color="#2f7890"/>
+      <stop offset="1" stop-color="#1d5569"/>
     </linearGradient>
+    <radialGradient id="sun" cx="0.15" cy="0" r="0.7">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.45"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="ripple" x="0" y="0" width="100%" height="100%"><feGaussianBlur stdDeviation="1.2 0.5"/></filter>
     <symbol id="pine" viewBox="0 0 20 60" preserveAspectRatio="none">
-      <path d="M10 0 L16 16 H13 L18 30 H14 L20 50 H11 V60 H9 V50 H0 L6 30 H2 L7 16 H4 Z"/>
+      <path d="M10 0 L13.5 11 H12 L16 22 H13.5 L18 35 H14.5 L20 52 H11 V60 H9 V52 H0 L5.5 35 H2 L6.5 22 H4 L8 11 H6.5 Z"/>
     </symbol>
-    <filter id="soft" x="-20%" y="-50%" width="140%" height="200%"><feGaussianBlur stdDeviation="8"/></filter>
-    <filter id="ripple"><feGaussianBlur stdDeviation="1.6 0.4"/></filter>
-    <linearGradient id="haze" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#e6eef5" stop-opacity="0"/>
-      <stop offset="1" stop-color="#e6eef5" stop-opacity="0.55"/>
-    </linearGradient>
-    <clipPath id="water"><rect x="0" y="400" width="800" height="200"/></clipPath>
+    <clipPath id="water"><rect x="0" y="352" width="800" height="148"/></clipPath>
     <g id="land">
-      <polygon points="0,300 15.0,283.7 30.0,267.5 45.0,259.3 60.0,238.2 75.0,229.6 90.0,215.0 103.3,219.2 116.7,221.4 130.0,232.6 143.3,232.8 156.7,243.4 170.0,250.0 185.0,231.5 200.0,218.4 215.0,209.1 230.0,200.6 245.0,178.8 260.0,170.0 273.3,176.7 286.7,191.5 300.0,205.4 313.3,210.9 326.7,218.8 340.0,230.0 355.0,228.2 370.0,209.6 385.0,211.8 400.0,197.5 415.0,188.2 430.0,185.0 445.0,189.6 460.0,201.0 475.0,216.3 490.0,217.8 505.0,231.8 520.0,240.0 533.3,235.0 546.7,225.1 560.0,220.6 573.3,208.1 586.7,201.4 600.0,200.0 616.7,204.8 633.3,218.8 650.0,224.1 666.7,231.1 683.3,242.7 700.0,250.0 716.7,257.8 733.3,264.3 750.0,278.5 766.7,285.7 783.3,288.6 800.0,300.0 800,400 0,400" fill="url(#far)"/>
-      <polygon points="240,190 260,170 280,186 270,192 259,184 250,195" fill="#f4f7fa" opacity="0.9"/><polygon points="412,198 430,185 448,197 438,203 430,196 421,205" fill="#f4f7fa" opacity="0.9"/><polygon points="75,226 90,215 104,224 96,230 89,224 82,232" fill="#f4f7fa" opacity="0.9"/><polygon points="585,210 600,200 614,209 606,214 600,208 593,216" fill="#f4f7fa" opacity="0.9"/>
-      <polygon points="0,330 10.0,324.4 20.0,317.0 30.0,315.3 40.0,306.5 50.0,293.7 60.0,290.0 75.0,290.1 90.0,271.3 105.0,268.9 120.0,266.9 135.0,251.8 150.0,250.0 163.3,258.2 176.7,260.2 190.0,277.4 203.3,287.0 216.7,292.7 230.0,300.0 245.0,298.6 260.0,284.1 275.0,282.7 290.0,274.7 305.0,267.8 320.0,260.0 335.0,267.7 350.0,281.4 365.0,291.2 380.0,293.0 395.0,304.0 410.0,310.0 475.0,307.2 540.0,319.5 605.0,322.1 670.0,330.2 735.0,331.2 800.0,330.0 800,400 0,400" fill="url(#mid)"/>
-      <polygon points="460,400 520,330 575,262 610,215 640,170 668,128 690,96 712,118 735,104 760,140 785,128 800,150 800,400" fill="url(#big)"/>
-      <polygon points="640,170 668,128 690,96 712,118 735,104 760,140 744,146 728,132 714,150 700,130 684,152 666,160 652,184" fill="#f4f7fa"/>
-      <polygon points="610,215 640,170 652,184 630,205 618,232" fill="#e3eaf1" opacity="0.8"/>
-      <rect x="0" y="360" width="800" height="40" fill="#2f4d3c"/>
-      <use href="#pine" x="223.8" y="350.5" width="7.7" height="24.2" fill="#3d5f4b"/>
-      <use href="#pine" x="14.0" y="344.3" width="8.1" height="25.4" fill="#3d5f4b"/>
-      <use href="#pine" x="90.6" y="356.7" width="6.1" height="18.9" fill="#3d5f4b"/>
-      <use href="#pine" x="100.0" y="349.9" width="7.0" height="22.0" fill="#3d5f4b"/>
-      <use href="#pine" x="694.1" y="353.2" width="6.2" height="19.3" fill="#3d5f4b"/>
-      <use href="#pine" x="434.4" y="344.1" width="10.3" height="32.1" fill="#3d5f4b"/>
-      <use href="#pine" x="687.6" y="349.7" width="7.2" height="22.5" fill="#3d5f4b"/>
-      <use href="#pine" x="281.9" y="345.4" width="10.3" height="32.1" fill="#3d5f4b"/>
-      <use href="#pine" x="117.4" y="349.5" width="6.7" height="20.8" fill="#3d5f4b"/>
-      <use href="#pine" x="182.5" y="348.1" width="8.2" height="25.8" fill="#3d5f4b"/>
-      <use href="#pine" x="207.3" y="354.1" width="5.8" height="18.1" fill="#3d5f4b"/>
-      <use href="#pine" x="291.1" y="350.5" width="8.7" height="27.1" fill="#3d5f4b"/>
-      <use href="#pine" x="548.2" y="347.9" width="8.4" height="26.2" fill="#3d5f4b"/>
-      <use href="#pine" x="537.9" y="358.1" width="6.0" height="18.9" fill="#3d5f4b"/>
-      <use href="#pine" x="618.9" y="344.0" width="10.2" height="32.0" fill="#3d5f4b"/>
-      <use href="#pine" x="310.0" y="344.7" width="7.8" height="24.4" fill="#3d5f4b"/>
-      <use href="#pine" x="504.4" y="349.7" width="6.1" height="19.0" fill="#3d5f4b"/>
-      <use href="#pine" x="163.7" y="350.8" width="6.6" height="20.6" fill="#3d5f4b"/>
-      <use href="#pine" x="39.2" y="351.5" width="5.8" height="18.0" fill="#3d5f4b"/>
-      <use href="#pine" x="77.4" y="344.4" width="7.6" height="23.8" fill="#3d5f4b"/>
-      <use href="#pine" x="695.0" y="341.7" width="8.9" height="27.8" fill="#3d5f4b"/>
-      <use href="#pine" x="198.0" y="348.1" width="7.5" height="23.6" fill="#3d5f4b"/>
-      <use href="#pine" x="93.2" y="346.3" width="10.1" height="31.6" fill="#3d5f4b"/>
-      <use href="#pine" x="368.7" y="343.1" width="8.2" height="25.7" fill="#3d5f4b"/>
-      <use href="#pine" x="78.0" y="347.2" width="7.5" height="23.5" fill="#3d5f4b"/>
-      <use href="#pine" x="659.8" y="347.6" width="6.6" height="20.6" fill="#3d5f4b"/>
-      <use href="#pine" x="756.6" y="343.0" width="8.5" height="26.5" fill="#3d5f4b"/>
-      <use href="#pine" x="431.6" y="354.8" width="5.9" height="18.4" fill="#3d5f4b"/>
-      <use href="#pine" x="777.7" y="343.1" width="10.2" height="31.8" fill="#3d5f4b"/>
-      <use href="#pine" x="205.1" y="345.8" width="7.6" height="23.9" fill="#3d5f4b"/>
-      <use href="#pine" x="613.3" y="349.3" width="8.5" height="26.5" fill="#3d5f4b"/>
-      <use href="#pine" x="260.3" y="354.5" width="6.9" height="21.6" fill="#3d5f4b"/>
-      <use href="#pine" x="782.9" y="344.4" width="10.1" height="31.6" fill="#3d5f4b"/>
-      <use href="#pine" x="649.9" y="340.4" width="9.5" height="29.8" fill="#3d5f4b"/>
-      <use href="#pine" x="410.3" y="344.6" width="7.6" height="23.7" fill="#3d5f4b"/>
-      <use href="#pine" x="18.8" y="348.1" width="7.2" height="22.5" fill="#3d5f4b"/>
-      <use href="#pine" x="548.7" y="339.2" width="10.7" height="33.3" fill="#3d5f4b"/>
-      <use href="#pine" x="744.2" y="343.7" width="10.8" height="33.8" fill="#3d5f4b"/>
-      <use href="#pine" x="288.3" y="348.7" width="6.9" height="21.5" fill="#3d5f4b"/>
-      <use href="#pine" x="154.0" y="353.0" width="6.8" height="21.3" fill="#3d5f4b"/>
-      <use href="#pine" x="715.2" y="341.3" width="10.1" height="31.4" fill="#3d5f4b"/>
-      <use href="#pine" x="517.5" y="338.1" width="9.9" height="30.8" fill="#3d5f4b"/>
-      <use href="#pine" x="523.3" y="343.3" width="10.4" height="32.6" fill="#3d5f4b"/>
-      <use href="#pine" x="596.0" y="344.1" width="8.2" height="25.6" fill="#3d5f4b"/>
-      <use href="#pine" x="627.6" y="352.7" width="7.5" height="23.3" fill="#3d5f4b"/>
-      <use href="#pine" x="773.4" y="347.7" width="7.8" height="24.3" fill="#3d5f4b"/>
-      <use href="#pine" x="752.7" y="340.1" width="9.5" height="29.6" fill="#3d5f4b"/>
-      <use href="#pine" x="98.4" y="356.6" width="6.5" height="20.4" fill="#3d5f4b"/>
-      <use href="#pine" x="641.9" y="355.9" width="6.5" height="20.3" fill="#3d5f4b"/>
-      <use href="#pine" x="779.7" y="343.0" width="9.1" height="28.5" fill="#3d5f4b"/>
-      <use href="#pine" x="435.7" y="348.0" width="6.4" height="20.1" fill="#3d5f4b"/>
-      <use href="#pine" x="772.2" y="344.9" width="9.1" height="28.4" fill="#3d5f4b"/>
-      <use href="#pine" x="742.9" y="351.8" width="8.0" height="24.9" fill="#3d5f4b"/>
-      <use href="#pine" x="657.5" y="349.1" width="6.8" height="21.4" fill="#3d5f4b"/>
-      <use href="#pine" x="230.9" y="352.0" width="7.0" height="21.8" fill="#3d5f4b"/>
-      <use href="#pine" x="203.5" y="344.6" width="7.9" height="24.7" fill="#3d5f4b"/>
-      <use href="#pine" x="724.2" y="348.9" width="7.6" height="23.7" fill="#3d5f4b"/>
-      <use href="#pine" x="461.5" y="339.7" width="10.4" height="32.5" fill="#3d5f4b"/>
-      <use href="#pine" x="730.0" y="347.3" width="8.3" height="26.0" fill="#3d5f4b"/>
-      <use href="#pine" x="415.9" y="354.1" width="5.9" height="18.3" fill="#3d5f4b"/>
-      <use href="#pine" x="143.6" y="357.9" width="5.8" height="18.1" fill="#3d5f4b"/>
-      <use href="#pine" x="133.8" y="349.7" width="8.2" height="25.6" fill="#3d5f4b"/>
-      <use href="#pine" x="441.5" y="350.0" width="7.4" height="23.2" fill="#3d5f4b"/>
-      <use href="#pine" x="439.5" y="338.5" width="9.8" height="30.5" fill="#3d5f4b"/>
-      <use href="#pine" x="444.7" y="348.8" width="7.0" height="22.0" fill="#3d5f4b"/>
-      <use href="#pine" x="613.6" y="347.5" width="8.4" height="26.1" fill="#3d5f4b"/>
-      <use href="#pine" x="602.8" y="339.8" width="10.4" height="32.6" fill="#3d5f4b"/>
-      <use href="#pine" x="485.8" y="347.0" width="8.3" height="26.1" fill="#3d5f4b"/>
-      <use href="#pine" x="550.1" y="348.1" width="8.1" height="25.2" fill="#3d5f4b"/>
-      <use href="#pine" x="377.1" y="341.9" width="10.6" height="33.1" fill="#3d5f4b"/>
-      <use href="#pine" x="695.9" y="337.5" width="10.6" height="33.1" fill="#3d5f4b"/>
-      <use href="#pine" x="442.3" y="343.3" width="10.6" height="33.1" fill="#3d5f4b"/>
-      <use href="#pine" x="106.5" y="352.5" width="6.4" height="19.9" fill="#3d5f4b"/>
-      <use href="#pine" x="54.5" y="346.9" width="7.0" height="21.9" fill="#3d5f4b"/>
-      <use href="#pine" x="530.7" y="346.4" width="9.8" height="30.5" fill="#3d5f4b"/>
-      <use href="#pine" x="118.8" y="345.1" width="9.4" height="29.5" fill="#3d5f4b"/>
-      <use href="#pine" x="109.2" y="345.6" width="10.3" height="32.1" fill="#3d5f4b"/>
-      <use href="#pine" x="170.4" y="338.7" width="10.6" height="33.2" fill="#3d5f4b"/>
-      <use href="#pine" x="384.4" y="342.5" width="10.8" height="33.8" fill="#3d5f4b"/>
-      <use href="#pine" x="125.2" y="348.3" width="8.0" height="24.9" fill="#3d5f4b"/>
-      <use href="#pine" x="267.9" y="350.1" width="6.8" height="21.1" fill="#3d5f4b"/>
-      <use href="#pine" x="574.8" y="355.2" width="5.9" height="18.3" fill="#3d5f4b"/>
-      <use href="#pine" x="349.4" y="353.0" width="5.9" height="18.3" fill="#3d5f4b"/>
-      <use href="#pine" x="495.0" y="342.4" width="8.4" height="26.2" fill="#3d5f4b"/>
-      <use href="#pine" x="783.2" y="347.1" width="9.8" height="30.6" fill="#3d5f4b"/>
-      <use href="#pine" x="80.3" y="346.1" width="7.1" height="22.2" fill="#3d5f4b"/>
-      <use href="#pine" x="619.6" y="347.0" width="7.1" height="22.3" fill="#3d5f4b"/>
-      <use href="#pine" x="332.6" y="343.6" width="10.4" height="32.6" fill="#3d5f4b"/>
-      <use href="#pine" x="203.6" y="356.8" width="6.5" height="20.4" fill="#3d5f4b"/>
-      <use href="#pine" x="451.8" y="339.7" width="9.3" height="29.2" fill="#3d5f4b"/>
-      <use href="#pine" x="41.4" y="343.2" width="9.3" height="29.0" fill="#3d5f4b"/>
-      <use href="#pine" x="52.6" y="341.3" width="10.6" height="33.0" fill="#3d5f4b"/>
-      <use href="#pine" x="638.2" y="357.2" width="6.2" height="19.3" fill="#3d5f4b"/>
-      <use href="#pine" x="48.2" y="340.7" width="10.2" height="31.8" fill="#3d5f4b"/>
-      <use href="#pine" x="267.0" y="350.4" width="8.6" height="26.8" fill="#3d5f4b"/>
-      <use href="#pine" x="211.1" y="353.2" width="6.4" height="20.1" fill="#3d5f4b"/>
-      <use href="#pine" x="187.6" y="349.9" width="6.3" height="19.8" fill="#3d5f4b"/>
-      <use href="#pine" x="36.9" y="349.9" width="6.8" height="21.2" fill="#3d5f4b"/>
-      <use href="#pine" x="239.2" y="340.7" width="9.6" height="30.2" fill="#3d5f4b"/>
-      <use href="#pine" x="396.7" y="350.6" width="6.7" height="20.8" fill="#3d5f4b"/>
-      <use href="#pine" x="11.0" y="346.1" width="7.0" height="22.0" fill="#3d5f4b"/>
-      <use href="#pine" x="582.2" y="343.1" width="8.6" height="26.8" fill="#3d5f4b"/>
-      <use href="#pine" x="374.5" y="336.1" width="10.5" height="33.0" fill="#3d5f4b"/>
-      <use href="#pine" x="651.1" y="348.0" width="8.0" height="24.9" fill="#3d5f4b"/>
-      <use href="#pine" x="663.8" y="348.8" width="7.8" height="24.3" fill="#3d5f4b"/>
-      <use href="#pine" x="544.8" y="337.7" width="10.8" height="33.7" fill="#3d5f4b"/>
-      <use href="#pine" x="661.1" y="345.1" width="9.4" height="29.3" fill="#3d5f4b"/>
-      <use href="#pine" x="320.0" y="345.0" width="7.5" height="23.6" fill="#3d5f4b"/>
-      <use href="#pine" x="100.8" y="356.3" width="6.1" height="19.1" fill="#3d5f4b"/>
-      <use href="#pine" x="201.2" y="348.2" width="6.6" height="20.6" fill="#3d5f4b"/>
-      <use href="#pine" x="667.9" y="342.8" width="10.2" height="31.9" fill="#3d5f4b"/>
-      <use href="#pine" x="222.0" y="349.1" width="7.0" height="21.9" fill="#3d5f4b"/>
-      <use href="#pine" x="364.3" y="351.9" width="6.6" height="20.5" fill="#3d5f4b"/>
-      <use href="#pine" x="205.3" y="344.3" width="10.7" height="33.4" fill="#3d5f4b"/>
-      <use href="#pine" x="434.2" y="355.7" width="7.0" height="21.9" fill="#3d5f4b"/>
-      <use href="#pine" x="243.8" y="344.3" width="7.6" height="23.7" fill="#3d5f4b"/>
-      <use href="#pine" x="301.2" y="347.4" width="8.2" height="25.6" fill="#3d5f4b"/>
-      <use href="#pine" x="156.6" y="342.0" width="8.3" height="26.1" fill="#3d5f4b"/>
-      <use href="#pine" x="208.2" y="352.6" width="6.2" height="19.4" fill="#3d5f4b"/>
-      <use href="#pine" x="30.4" y="352.7" width="5.9" height="18.4" fill="#3d5f4b"/>
-      <use href="#pine" x="181.9" y="345.9" width="8.8" height="27.4" fill="#3d5f4b"/>
-      <use href="#pine" x="595.9" y="346.6" width="9.1" height="28.5" fill="#3d5f4b"/>
-      <use href="#pine" x="699.4" y="347.0" width="7.8" height="24.2" fill="#3d5f4b"/>
-      <use href="#pine" x="784.5" y="354.9" width="6.5" height="20.4" fill="#3d5f4b"/>
-      <use href="#pine" x="511.6" y="357.7" width="6.0" height="18.7" fill="#3d5f4b"/>
-      <use href="#pine" x="709.1" y="347.3" width="9.0" height="28.0" fill="#3d5f4b"/>
-      <use href="#pine" x="646.5" y="353.0" width="6.5" height="20.2" fill="#3d5f4b"/>
-      <use href="#pine" x="398.5" y="344.7" width="10.0" height="31.4" fill="#3d5f4b"/>
-      <use href="#pine" x="656.8" y="349.6" width="8.8" height="27.3" fill="#3d5f4b"/>
-      <use href="#pine" x="541.7" y="341.2" width="9.3" height="29.1" fill="#3d5f4b"/>
-      <use href="#pine" x="21.7" y="351.5" width="6.4" height="20.1" fill="#3d5f4b"/>
-      <use href="#pine" x="78.9" y="342.2" width="10.0" height="31.4" fill="#3d5f4b"/>
-      <use href="#pine" x="497.7" y="346.8" width="9.0" height="28.0" fill="#3d5f4b"/>
-      <use href="#pine" x="388.5" y="357.9" width="5.8" height="18.1" fill="#3d5f4b"/>
-      <use href="#pine" x="594.4" y="347.3" width="8.3" height="26.0" fill="#3d5f4b"/>
-      <use href="#pine" x="524.4" y="356.3" width="6.1" height="19.1" fill="#3d5f4b"/>
-      <use href="#pine" x="198.7" y="351.5" width="6.1" height="19.2" fill="#3d5f4b"/>
-      <use href="#pine" x="580.1" y="354.1" width="6.8" height="21.3" fill="#3d5f4b"/>
-      <use href="#pine" x="776.4" y="345.9" width="8.3" height="25.9" fill="#3d5f4b"/>
-      <use href="#pine" x="378.6" y="346.7" width="9.3" height="28.9" fill="#3d5f4b"/>
-      <use href="#pine" x="485.9" y="350.8" width="15.4" height="48.0" fill="#1e3a2b"/>
-      <use href="#pine" x="112.0" y="368.3" width="11.9" height="37.1" fill="#1e3a2b"/>
-      <use href="#pine" x="236.2" y="352.2" width="14.7" height="45.9" fill="#1e3a2b"/>
-      <use href="#pine" x="42.5" y="367.2" width="12.0" height="37.5" fill="#1e3a2b"/>
-      <use href="#pine" x="545.9" y="352.0" width="15.7" height="48.9" fill="#1e3a2b"/>
-      <use href="#pine" x="406.3" y="359.7" width="13.8" height="43.0" fill="#1e3a2b"/>
-      <use href="#pine" x="86.0" y="345.0" width="17.6" height="55.0" fill="#1e3a2b"/>
-      <use href="#pine" x="773.5" y="342.0" width="18.0" height="56.2" fill="#1e3a2b"/>
-      <use href="#pine" x="358.7" y="354.7" width="16.9" height="53.0" fill="#1e3a2b"/>
-      <use href="#pine" x="353.6" y="362.6" width="12.0" height="37.5" fill="#1e3a2b"/>
-      <use href="#pine" x="750.7" y="367.9" width="11.5" height="35.9" fill="#1e3a2b"/>
-      <use href="#pine" x="106.2" y="362.9" width="14.3" height="44.7" fill="#1e3a2b"/>
-      <use href="#pine" x="97.6" y="350.1" width="16.9" height="53.0" fill="#1e3a2b"/>
-      <use href="#pine" x="701.5" y="350.6" width="15.9" height="49.7" fill="#1e3a2b"/>
-      <use href="#pine" x="711.2" y="354.6" width="14.0" height="43.6" fill="#1e3a2b"/>
-      <use href="#pine" x="-4.1" y="358.7" width="14.0" height="43.8" fill="#1e3a2b"/>
-      <use href="#pine" x="236.1" y="367.5" width="10.9" height="33.9" fill="#1e3a2b"/>
-      <use href="#pine" x="244.3" y="344.5" width="17.1" height="53.5" fill="#1e3a2b"/>
-      <use href="#pine" x="592.0" y="345.7" width="17.1" height="53.5" fill="#1e3a2b"/>
-      <use href="#pine" x="733.1" y="357.1" width="16.0" height="50.0" fill="#1e3a2b"/>
-      <use href="#pine" x="225.4" y="361.5" width="12.9" height="40.4" fill="#1e3a2b"/>
-      <use href="#pine" x="791.6" y="355.1" width="14.9" height="46.5" fill="#1e3a2b"/>
-      <use href="#pine" x="336.4" y="360.8" width="12.1" height="37.7" fill="#1e3a2b"/>
-      <use href="#pine" x="72.8" y="347.5" width="17.1" height="53.4" fill="#1e3a2b"/>
-      <use href="#pine" x="742.6" y="363.7" width="11.8" height="37.0" fill="#1e3a2b"/>
-      <use href="#pine" x="403.1" y="366.4" width="11.3" height="35.3" fill="#1e3a2b"/>
-      <use href="#pine" x="756.2" y="351.4" width="17.5" height="54.8" fill="#1e3a2b"/>
-      <use href="#pine" x="495.8" y="351.8" width="17.8" height="55.6" fill="#1e3a2b"/>
-      <use href="#pine" x="431.4" y="348.3" width="16.0" height="50.1" fill="#1e3a2b"/>
-      <use href="#pine" x="579.1" y="362.9" width="13.6" height="42.6" fill="#1e3a2b"/>
-      <use href="#pine" x="509.5" y="360.5" width="12.2" height="38.0" fill="#1e3a2b"/>
-      <use href="#pine" x="736.1" y="369.2" width="10.7" height="33.6" fill="#1e3a2b"/>
-      <use href="#pine" x="268.8" y="367.1" width="12.3" height="38.3" fill="#1e3a2b"/>
-      <use href="#pine" x="775.1" y="367.3" width="11.9" height="37.3" fill="#1e3a2b"/>
-      <use href="#pine" x="233.4" y="356.3" width="14.6" height="45.6" fill="#1e3a2b"/>
-      <use href="#pine" x="128.3" y="365.6" width="11.0" height="34.5" fill="#1e3a2b"/>
-      <use href="#pine" x="717.7" y="356.3" width="14.1" height="43.9" fill="#1e3a2b"/>
-      <use href="#pine" x="715.7" y="344.6" width="18.5" height="57.9" fill="#1e3a2b"/>
-      <use href="#pine" x="106.0" y="363.5" width="11.3" height="35.4" fill="#1e3a2b"/>
-      <use href="#pine" x="268.4" y="367.8" width="10.4" height="32.6" fill="#1e3a2b"/>
-      <use href="#pine" x="199.3" y="360.9" width="14.7" height="45.9" fill="#1e3a2b"/>
-      <use href="#pine" x="593.1" y="360.6" width="13.3" height="41.6" fill="#1e3a2b"/>
-      <use href="#pine" x="412.8" y="360.8" width="13.0" height="40.6" fill="#1e3a2b"/>
-      <use href="#pine" x="43.6" y="369.9" width="12.1" height="37.8" fill="#1e3a2b"/>
-      <use href="#pine" x="93.6" y="360.2" width="14.1" height="44.1" fill="#1e3a2b"/>
-      <use href="#pine" x="684.5" y="364.7" width="11.5" height="36.0" fill="#1e3a2b"/>
-      <use href="#pine" x="192.2" y="361.3" width="13.2" height="41.2" fill="#1e3a2b"/>
-      <use href="#pine" x="754.6" y="353.0" width="17.2" height="53.8" fill="#1e3a2b"/>
-      <use href="#pine" x="12.5" y="374.2" width="9.9" height="30.9" fill="#1e3a2b"/>
-      <use href="#pine" x="709.6" y="360.6" width="13.8" height="43.3" fill="#1e3a2b"/>
-      <use href="#pine" x="-6.4" y="366.3" width="13.1" height="41.0" fill="#1e3a2b"/>
-      <use href="#pine" x="651.8" y="353.8" width="17.3" height="54.0" fill="#1e3a2b"/>
-      <use href="#pine" x="193.5" y="366.5" width="10.6" height="33.1" fill="#1e3a2b"/>
-      <use href="#pine" x="410.0" y="358.3" width="15.7" height="49.1" fill="#1e3a2b"/>
-      <use href="#pine" x="569.7" y="357.5" width="15.4" height="48.1" fill="#1e3a2b"/>
-      <use href="#pine" x="358.6" y="353.0" width="14.5" height="45.4" fill="#1e3a2b"/>
-      <use href="#pine" x="620.0" y="370.7" width="11.7" height="36.5" fill="#1e3a2b"/>
-      <use href="#pine" x="510.2" y="360.8" width="12.3" height="38.5" fill="#1e3a2b"/>
-      <use href="#pine" x="193.8" y="357.2" width="15.3" height="47.8" fill="#1e3a2b"/>
-      <use href="#pine" x="84.6" y="371.3" width="10.2" height="32.0" fill="#1e3a2b"/>
-      <use href="#pine" x="459.8" y="359.4" width="13.1" height="40.9" fill="#1e3a2b"/>
-      <use href="#pine" x="476.0" y="370.7" width="9.7" height="30.3" fill="#1e3a2b"/>
-      <use href="#pine" x="359.5" y="347.6" width="18.2" height="56.9" fill="#1e3a2b"/>
-      <use href="#pine" x="700.1" y="357.0" width="13.9" height="43.3" fill="#1e3a2b"/>
-      <use href="#pine" x="188.5" y="348.1" width="18.2" height="56.9" fill="#1e3a2b"/>
-      <use href="#pine" x="241.0" y="372.4" width="9.8" height="30.6" fill="#1e3a2b"/>
-      <use href="#pine" x="532.9" y="358.8" width="13.4" height="41.8" fill="#1e3a2b"/>
-      <use href="#pine" x="524.9" y="344.4" width="17.9" height="55.9" fill="#1e3a2b"/>
-      <use href="#pine" x="21.0" y="362.7" width="12.6" height="39.5" fill="#1e3a2b"/>
-      <use href="#pine" x="540.4" y="370.4" width="11.4" height="35.5" fill="#1e3a2b"/>
-      <use href="#pine" x="584.2" y="355.9" width="14.1" height="44.1" fill="#1e3a2b"/>
-      <use href="#pine" x="769.7" y="367.5" width="12.4" height="38.7" fill="#1e3a2b"/>
-      <use href="#pine" x="178.9" y="369.4" width="11.6" height="36.2" fill="#1e3a2b"/>
-      <use href="#pine" x="226.9" y="346.3" width="18.1" height="56.7" fill="#1e3a2b"/>
-      <use href="#pine" x="144.1" y="365.9" width="11.6" height="36.3" fill="#1e3a2b"/>
-      <use href="#pine" x="523.2" y="342.9" width="18.1" height="56.6" fill="#1e3a2b"/>
-      <use href="#pine" x="309.0" y="371.8" width="11.5" height="36.0" fill="#1e3a2b"/>
-      <use href="#pine" x="108.5" y="367.1" width="10.1" height="31.5" fill="#1e3a2b"/>
-      <use href="#pine" x="305.8" y="351.7" width="17.6" height="55.1" fill="#1e3a2b"/>
-      <use href="#pine" x="576.9" y="349.4" width="18.5" height="57.9" fill="#1e3a2b"/>
-      <use href="#pine" x="257.8" y="372.2" width="11.3" height="35.2" fill="#1e3a2b"/>
-      <use href="#pine" x="592.1" y="373.8" width="9.9" height="30.9" fill="#1e3a2b"/>
-      <use href="#pine" x="296.4" y="360.8" width="12.9" height="40.5" fill="#1e3a2b"/>
-      <use href="#pine" x="130.6" y="370.7" width="9.6" height="30.1" fill="#1e3a2b"/>
-      <use href="#pine" x="272.1" y="342.5" width="18.2" height="56.8" fill="#1e3a2b"/>
-      <use href="#pine" x="765.7" y="365.8" width="11.5" height="35.8" fill="#1e3a2b"/>
-      <use href="#pine" x="648.8" y="349.3" width="17.0" height="53.0" fill="#1e3a2b"/>
-      <use href="#pine" x="32.5" y="358.5" width="13.8" height="43.3" fill="#1e3a2b"/>
-      <use href="#pine" x="729.9" y="366.2" width="11.3" height="35.4" fill="#1e3a2b"/>
-      <use href="#pine" x="712.7" y="371.3" width="9.9" height="30.8" fill="#1e3a2b"/>
-      <use href="#pine" x="641.2" y="346.9" width="16.5" height="51.5" fill="#1e3a2b"/>
-      <use href="#pine" x="22.8" y="375.4" width="10.2" height="31.8" fill="#1e3a2b"/>
-      <use href="#pine" x="197.5" y="356.1" width="16.3" height="50.9" fill="#1e3a2b"/>
-      <use href="#pine" x="265.2" y="370.0" width="12.0" height="37.6" fill="#1e3a2b"/>
-      <use href="#pine" x="487.6" y="367.8" width="11.9" height="37.3" fill="#1e3a2b"/>
-      <use href="#pine" x="247.2" y="360.3" width="12.1" height="37.7" fill="#1e3a2b"/>
-      <use href="#pine" x="595.6" y="348.7" width="17.8" height="55.7" fill="#1e3a2b"/>
-      <use href="#pine" x="749.7" y="369.7" width="9.8" height="30.7" fill="#1e3a2b"/>
-      <use href="#pine" x="371.1" y="350.7" width="18.2" height="56.8" fill="#1e3a2b"/>
-      <use href="#pine" x="303.3" y="365.3" width="11.8" height="37.0" fill="#1e3a2b"/>
-      <use href="#pine" x="385.8" y="343.8" width="17.9" height="56.0" fill="#1e3a2b"/>
-      <use href="#pine" x="633.9" y="355.5" width="16.2" height="50.7" fill="#1e3a2b"/>
-      <use href="#pine" x="610.7" y="354.3" width="15.0" height="47.0" fill="#1e3a2b"/>
-      <use href="#pine" x="249.2" y="365.7" width="12.8" height="40.1" fill="#1e3a2b"/>
-      <use href="#pine" x="57.5" y="370.0" width="11.4" height="35.5" fill="#1e3a2b"/>
-      <use href="#pine" x="192.8" y="366.5" width="10.2" height="31.8" fill="#1e3a2b"/>
-      <use href="#pine" x="435.8" y="368.7" width="12.5" height="39.1" fill="#1e3a2b"/>
-      <use href="#pine" x="697.6" y="343.0" width="18.5" height="57.7" fill="#1e3a2b"/>
-      <use href="#pine" x="62.0" y="370.3" width="10.5" height="32.7" fill="#1e3a2b"/>
-      <use href="#pine" x="561.0" y="357.8" width="13.6" height="42.5" fill="#1e3a2b"/>
+      <polygon points="-10,300 0.0,277.5 10.0,256.6 20.0,238.2 30.0,211.7 40.0,190.0 58.0,182.1 76.0,174.9 94.0,162.8 112.0,158.1 130.0,150.0 147.0,158.3 164.0,166.9 181.0,166.9 198.0,176.0 215.0,185.0 232.0,167.9 249.0,162.1 266.0,147.9 283.0,128.4 300.0,120.0 316.0,134.8 332.0,144.6 348.0,151.5 364.0,161.2 380.0,170.0 395.0,159.6 410.0,151.2 425.0,149.3 440.0,137.6 455.0,135.0 472.0,140.9 489.0,150.4 506.0,157.3 523.0,170.6 540.0,180.0 594.0,203.4 648.0,231.4 702.0,252.2 756.0,277.4 810.0,300.0 810,352 -10,352" fill="url(#far)"/>
+      <polygon points="40,190 85.0,215 51.25,300" fill="#2b4466" opacity="0.16"/><polygon points="130,150 172.5,210 140.625,300" fill="#2b4466" opacity="0.16"/><polygon points="215,185 257.5,210 225.625,300" fill="#2b4466" opacity="0.16"/><polygon points="300,120 340.0,195 310.0,300" fill="#2b4466" opacity="0.16"/><polygon points="380,170 417.5,195 389.375,300" fill="#2b4466" opacity="0.16"/><polygon points="455,135 497.5,205 465.625,300" fill="#2b4466" opacity="0.16"/><polygon points="540,180 585.0,290 551.25,300" fill="#2b4466" opacity="0.16"/>
+      <polygon points="-10,322 -4.0,309.6 2.0,299.1 8.0,284.3 14.0,269.7 20.0,260.0 38.0,259.0 56.0,251.9 74.0,243.1 92.0,234.5 110.0,225.0 128.0,230.2 146.0,236.6 164.0,244.7 182.0,249.4 200.0,262.0 218.0,259.2 236.0,248.8 254.0,248.2 272.0,236.6 290.0,232.0 308.0,245.1 326.0,251.4 344.0,248.8 362.0,258.9 380.0,270.0 398.0,269.9 416.0,259.6 434.0,260.8 452.0,248.8 470.0,245.0 538.0,255.3 606.0,277.4 674.0,294.5 742.0,303.8 810.0,322.0 810,352 -10,352" fill="url(#mid)"/>
+      <polygon points="20,260 65.0,285 31.25,322" fill="#1e3550" opacity="0.18"/><polygon points="110,225 155.0,287 121.25,322" fill="#1e3550" opacity="0.18"/><polygon points="200,262 245.0,287 211.25,322" fill="#1e3550" opacity="0.18"/><polygon points="290,232 335.0,295 301.25,322" fill="#1e3550" opacity="0.18"/><polygon points="380,270 425.0,295 391.25,322" fill="#1e3550" opacity="0.18"/><polygon points="470,245 515.0,312 481.25,322" fill="#1e3550" opacity="0.18"/>
+      <polygon points="470,352 488.0,328.3 506.0,309.9 524.0,294.5 542.0,272.5 560.0,250.0 576.0,226.9 592.0,208.0 608.0,186.8 624.0,166.5 640.0,150.0 652.0,134.8 664.0,112.2 676.0,97.7 688.0,79.2 700.0,62.0 707.0,67.1 714.0,79.1 721.0,81.8 728.0,93.5 735.0,100.0 742.4,92.5 749.8,90.6 757.2,84.5 764.6,80.6 772.0,78.0 779.6,90.2 787.2,97.2 794.8,101.6 802.4,114.7 810.0,120.0 810,352" fill="url(#big)"/>
+      <polygon points="700,62 735,100 772,78 810,120 810,352 640,352 690,200 712,120" fill="#1f3247" opacity="0.28"/>
+      <rect x="0" y="330" width="800" height="22" fill="#24503e"/>
+      <use href="#pine" x="164.4" y="311.5" width="8.2" height="24.3" fill="#2f5d4c"/>
+      <use href="#pine" x="509.1" y="307.8" width="8.8" height="25.9" fill="#2f5d4c"/>
+      <use href="#pine" x="166.6" y="311.5" width="7.9" height="23.3" fill="#2f5d4c"/>
+      <use href="#pine" x="260.6" y="320.2" width="5.1" height="14.9" fill="#2f5d4c"/>
+      <use href="#pine" x="69.2" y="320.2" width="5.8" height="16.9" fill="#2f5d4c"/>
+      <use href="#pine" x="477.7" y="316.2" width="6.6" height="19.4" fill="#2f5d4c"/>
+      <use href="#pine" x="763.8" y="315.5" width="7.1" height="20.9" fill="#2f5d4c"/>
+      <use href="#pine" x="690.5" y="318.4" width="5.4" height="15.8" fill="#2f5d4c"/>
+      <use href="#pine" x="723.9" y="321.7" width="5.8" height="17.0" fill="#2f5d4c"/>
+      <use href="#pine" x="147.5" y="312.9" width="8.6" height="25.3" fill="#2f5d4c"/>
+      <use href="#pine" x="153.1" y="315.1" width="8.4" height="24.6" fill="#2f5d4c"/>
+      <use href="#pine" x="480.2" y="320.7" width="5.2" height="15.2" fill="#2f5d4c"/>
+      <use href="#pine" x="28.1" y="322.9" width="5.7" height="16.9" fill="#2f5d4c"/>
+      <use href="#pine" x="559.6" y="310.9" width="8.1" height="23.9" fill="#2f5d4c"/>
+      <use href="#pine" x="474.4" y="318.9" width="5.5" height="16.1" fill="#2f5d4c"/>
+      <use href="#pine" x="573.4" y="316.7" width="5.7" height="16.7" fill="#2f5d4c"/>
+      <use href="#pine" x="443.9" y="317.6" width="7.3" height="21.4" fill="#2f5d4c"/>
+      <use href="#pine" x="221.4" y="323.0" width="5.6" height="16.4" fill="#2f5d4c"/>
+      <use href="#pine" x="10.0" y="315.5" width="6.6" height="19.3" fill="#2f5d4c"/>
+      <use href="#pine" x="45.2" y="315.8" width="6.3" height="18.4" fill="#2f5d4c"/>
+      <use href="#pine" x="454.6" y="315.6" width="6.2" height="18.3" fill="#2f5d4c"/>
+      <use href="#pine" x="709.0" y="318.0" width="7.4" height="21.9" fill="#2f5d4c"/>
+      <use href="#pine" x="550.3" y="321.4" width="5.3" height="15.7" fill="#2f5d4c"/>
+      <use href="#pine" x="23.8" y="308.2" width="8.5" height="24.9" fill="#2f5d4c"/>
+      <use href="#pine" x="558.4" y="325.5" width="4.8" height="14.3" fill="#2f5d4c"/>
+      <use href="#pine" x="505.1" y="313.6" width="7.7" height="22.8" fill="#2f5d4c"/>
+      <use href="#pine" x="252.6" y="325.1" width="5.1" height="14.9" fill="#2f5d4c"/>
+      <use href="#pine" x="432.7" y="313.4" width="8.4" height="24.8" fill="#2f5d4c"/>
+      <use href="#pine" x="585.7" y="314.4" width="8.0" height="23.5" fill="#2f5d4c"/>
+      <use href="#pine" x="728.2" y="313.2" width="7.6" height="22.2" fill="#2f5d4c"/>
+      <use href="#pine" x="717.4" y="320.1" width="6.5" height="19.0" fill="#2f5d4c"/>
+      <use href="#pine" x="628.9" y="318.2" width="7.1" height="20.9" fill="#2f5d4c"/>
+      <use href="#pine" x="496.4" y="314.7" width="7.1" height="21.0" fill="#2f5d4c"/>
+      <use href="#pine" x="483.4" y="311.9" width="7.4" height="21.7" fill="#2f5d4c"/>
+      <use href="#pine" x="790.8" y="316.4" width="7.7" height="22.7" fill="#2f5d4c"/>
+      <use href="#pine" x="307.2" y="317.2" width="7.1" height="21.0" fill="#2f5d4c"/>
+      <use href="#pine" x="349.9" y="323.9" width="5.1" height="15.0" fill="#2f5d4c"/>
+      <use href="#pine" x="596.6" y="312.0" width="7.2" height="21.2" fill="#2f5d4c"/>
+      <use href="#pine" x="381.0" y="312.2" width="7.6" height="22.4" fill="#2f5d4c"/>
+      <use href="#pine" x="393.5" y="312.3" width="8.5" height="25.0" fill="#2f5d4c"/>
+      <use href="#pine" x="201.7" y="315.5" width="6.0" height="17.6" fill="#2f5d4c"/>
+      <use href="#pine" x="539.8" y="318.4" width="5.5" height="16.0" fill="#2f5d4c"/>
+      <use href="#pine" x="721.3" y="318.3" width="6.6" height="19.3" fill="#2f5d4c"/>
+      <use href="#pine" x="709.6" y="313.3" width="7.5" height="22.0" fill="#2f5d4c"/>
+      <use href="#pine" x="154.8" y="312.3" width="8.0" height="23.7" fill="#2f5d4c"/>
+      <use href="#pine" x="728.2" y="320.5" width="6.3" height="18.6" fill="#2f5d4c"/>
+      <use href="#pine" x="463.8" y="319.6" width="5.3" height="15.6" fill="#2f5d4c"/>
+      <use href="#pine" x="393.1" y="314.7" width="8.2" height="24.2" fill="#2f5d4c"/>
+      <use href="#pine" x="566.0" y="322.3" width="5.9" height="17.3" fill="#2f5d4c"/>
+      <use href="#pine" x="132.4" y="318.9" width="5.9" height="17.3" fill="#2f5d4c"/>
+      <use href="#pine" x="167.6" y="314.4" width="7.3" height="21.5" fill="#2f5d4c"/>
+      <use href="#pine" x="391.0" y="311.1" width="8.2" height="24.1" fill="#2f5d4c"/>
+      <use href="#pine" x="783.1" y="321.3" width="5.1" height="14.9" fill="#2f5d4c"/>
+      <use href="#pine" x="22.7" y="324.6" width="4.9" height="14.5" fill="#2f5d4c"/>
+      <use href="#pine" x="563.9" y="319.3" width="6.0" height="17.7" fill="#2f5d4c"/>
+      <use href="#pine" x="630.6" y="317.5" width="5.3" height="15.6" fill="#2f5d4c"/>
+      <use href="#pine" x="359.8" y="309.2" width="8.1" height="24.0" fill="#2f5d4c"/>
+      <use href="#pine" x="187.5" y="319.4" width="5.0" height="14.6" fill="#2f5d4c"/>
+      <use href="#pine" x="499.7" y="314.6" width="7.3" height="21.6" fill="#2f5d4c"/>
+      <use href="#pine" x="519.7" y="313.2" width="8.7" height="25.5" fill="#2f5d4c"/>
+      <use href="#pine" x="544.2" y="314.7" width="6.7" height="19.7" fill="#2f5d4c"/>
+      <use href="#pine" x="139.6" y="313.4" width="6.7" height="19.7" fill="#2f5d4c"/>
+      <use href="#pine" x="568.4" y="317.0" width="5.9" height="17.3" fill="#2f5d4c"/>
+      <use href="#pine" x="273.1" y="317.6" width="6.9" height="20.2" fill="#2f5d4c"/>
+      <use href="#pine" x="488.4" y="319.6" width="6.4" height="18.7" fill="#2f5d4c"/>
+      <use href="#pine" x="631.0" y="324.3" width="5.1" height="15.0" fill="#2f5d4c"/>
+      <use href="#pine" x="743.4" y="322.5" width="5.3" height="15.6" fill="#2f5d4c"/>
+      <use href="#pine" x="358.6" y="312.5" width="8.5" height="24.9" fill="#2f5d4c"/>
+      <use href="#pine" x="297.3" y="312.4" width="8.3" height="24.6" fill="#2f5d4c"/>
+      <use href="#pine" x="634.1" y="320.0" width="6.7" height="19.6" fill="#2f5d4c"/>
+      <use href="#pine" x="517.2" y="311.8" width="7.7" height="22.7" fill="#2f5d4c"/>
+      <use href="#pine" x="650.8" y="314.9" width="7.7" height="22.6" fill="#2f5d4c"/>
+      <use href="#pine" x="166.3" y="313.5" width="8.8" height="25.8" fill="#2f5d4c"/>
+      <use href="#pine" x="777.9" y="313.3" width="8.0" height="23.5" fill="#2f5d4c"/>
+      <use href="#pine" x="252.2" y="315.1" width="8.3" height="24.3" fill="#2f5d4c"/>
+      <use href="#pine" x="275.5" y="314.3" width="6.6" height="19.3" fill="#2f5d4c"/>
+      <use href="#pine" x="436.9" y="318.5" width="6.7" height="19.8" fill="#2f5d4c"/>
+      <use href="#pine" x="20.2" y="323.9" width="5.0" height="14.8" fill="#2f5d4c"/>
+      <use href="#pine" x="636.8" y="316.2" width="6.1" height="18.0" fill="#2f5d4c"/>
+      <use href="#pine" x="627.6" y="318.2" width="5.4" height="15.8" fill="#2f5d4c"/>
+      <use href="#pine" x="409.1" y="314.0" width="8.2" height="24.1" fill="#2f5d4c"/>
+      <use href="#pine" x="548.1" y="319.7" width="6.8" height="19.9" fill="#2f5d4c"/>
+      <use href="#pine" x="756.5" y="316.9" width="5.7" height="16.7" fill="#2f5d4c"/>
+      <use href="#pine" x="417.5" y="312.3" width="7.7" height="22.7" fill="#2f5d4c"/>
+      <use href="#pine" x="507.0" y="312.5" width="8.2" height="24.1" fill="#2f5d4c"/>
+      <use href="#pine" x="444.8" y="316.6" width="6.3" height="18.6" fill="#2f5d4c"/>
+      <use href="#pine" x="673.4" y="322.8" width="5.6" height="16.5" fill="#2f5d4c"/>
+      <use href="#pine" x="677.2" y="319.5" width="6.9" height="20.3" fill="#2f5d4c"/>
+      <use href="#pine" x="454.9" y="314.0" width="6.9" height="20.4" fill="#2f5d4c"/>
+      <use href="#pine" x="400.1" y="322.9" width="4.9" height="14.3" fill="#2f5d4c"/>
+      <use href="#pine" x="772.3" y="317.8" width="6.4" height="18.8" fill="#2f5d4c"/>
+      <use href="#pine" x="637.5" y="317.0" width="6.8" height="19.9" fill="#2f5d4c"/>
+      <use href="#pine" x="549.3" y="313.0" width="7.0" height="20.5" fill="#2f5d4c"/>
+      <use href="#pine" x="326.8" y="314.6" width="8.5" height="25.1" fill="#2f5d4c"/>
+      <use href="#pine" x="212.7" y="320.8" width="5.3" height="15.5" fill="#2f5d4c"/>
+      <use href="#pine" x="342.7" y="313.9" width="8.4" height="24.8" fill="#2f5d4c"/>
+      <use href="#pine" x="378.5" y="318.9" width="5.5" height="16.3" fill="#2f5d4c"/>
+      <use href="#pine" x="491.7" y="323.9" width="5.3" height="15.6" fill="#2f5d4c"/>
+      <use href="#pine" x="620.7" y="316.8" width="5.6" height="16.3" fill="#2f5d4c"/>
+      <use href="#pine" x="178.8" y="319.9" width="6.1" height="17.9" fill="#2f5d4c"/>
+      <use href="#pine" x="281.7" y="322.1" width="5.2" height="15.3" fill="#2f5d4c"/>
+      <use href="#pine" x="581.3" y="313.7" width="6.8" height="20.1" fill="#2f5d4c"/>
+      <use href="#pine" x="197.0" y="314.0" width="6.9" height="20.4" fill="#2f5d4c"/>
+      <use href="#pine" x="346.2" y="316.7" width="6.4" height="19.0" fill="#2f5d4c"/>
+      <use href="#pine" x="420.7" y="317.7" width="5.6" height="16.5" fill="#2f5d4c"/>
+      <use href="#pine" x="501.6" y="317.1" width="6.9" height="20.4" fill="#2f5d4c"/>
+      <use href="#pine" x="676.9" y="313.0" width="8.3" height="24.3" fill="#2f5d4c"/>
+      <use href="#pine" x="182.1" y="314.5" width="8.1" height="23.7" fill="#2f5d4c"/>
+      <use href="#pine" x="719.1" y="317.4" width="6.0" height="17.8" fill="#2f5d4c"/>
+      <use href="#pine" x="733.8" y="308.5" width="8.8" height="26.0" fill="#2f5d4c"/>
+      <use href="#pine" x="707.2" y="317.1" width="5.7" height="16.9" fill="#2f5d4c"/>
+      <use href="#pine" x="578.7" y="319.7" width="5.2" height="15.2" fill="#2f5d4c"/>
+      <use href="#pine" x="661.7" y="312.5" width="8.0" height="23.5" fill="#2f5d4c"/>
+      <use href="#pine" x="97.0" y="313.6" width="7.6" height="22.2" fill="#2f5d4c"/>
+      <use href="#pine" x="10.4" y="312.2" width="7.5" height="22.2" fill="#2f5d4c"/>
+      <use href="#pine" x="726.5" y="324.4" width="5.2" height="15.4" fill="#2f5d4c"/>
+      <use href="#pine" x="401.1" y="318.3" width="6.8" height="20.0" fill="#2f5d4c"/>
+      <use href="#pine" x="546.0" y="319.5" width="5.0" height="14.8" fill="#2f5d4c"/>
+      <use href="#pine" x="81.4" y="312.6" width="7.0" height="20.6" fill="#2f5d4c"/>
+      <use href="#pine" x="409.2" y="321.2" width="5.4" height="15.8" fill="#2f5d4c"/>
+      <use href="#pine" x="143.5" y="310.3" width="8.2" height="24.1" fill="#2f5d4c"/>
+      <use href="#pine" x="789.7" y="324.3" width="5.1" height="15.1" fill="#2f5d4c"/>
+      <use href="#pine" x="46.2" y="320.1" width="6.6" height="19.5" fill="#2f5d4c"/>
+      <use href="#pine" x="608.4" y="315.7" width="6.7" height="19.6" fill="#2f5d4c"/>
+      <use href="#pine" x="408.6" y="314.8" width="7.2" height="21.2" fill="#2f5d4c"/>
+      <use href="#pine" x="6.5" y="313.8" width="8.2" height="24.1" fill="#2f5d4c"/>
+      <use href="#pine" x="141.1" y="313.3" width="7.8" height="22.9" fill="#2f5d4c"/>
+      <use href="#pine" x="321.5" y="318.4" width="5.4" height="16.0" fill="#2f5d4c"/>
+      <use href="#pine" x="405.8" y="308.4" width="8.4" height="24.7" fill="#2f5d4c"/>
+      <use href="#pine" x="637.2" y="313.6" width="8.3" height="24.3" fill="#2f5d4c"/>
+      <use href="#pine" x="499.9" y="314.6" width="7.2" height="21.2" fill="#2f5d4c"/>
+      <use href="#pine" x="399.4" y="316.2" width="8.0" height="23.7" fill="#2f5d4c"/>
+      <use href="#pine" x="202.7" y="316.4" width="7.8" height="22.9" fill="#2f5d4c"/>
+      <use href="#pine" x="619.2" y="319.8" width="6.4" height="18.9" fill="#2f5d4c"/>
+      <use href="#pine" x="713.4" y="316.8" width="7.6" height="22.3" fill="#2f5d4c"/>
+      <use href="#pine" x="610.6" y="319.5" width="6.4" height="18.9" fill="#2f5d4c"/>
+      <use href="#pine" x="575.0" y="315.4" width="6.2" height="18.1" fill="#2f5d4c"/>
+      <use href="#pine" x="372.0" y="314.8" width="6.2" height="18.3" fill="#2f5d4c"/>
+      <use href="#pine" x="508.1" y="320.6" width="5.7" height="16.8" fill="#2f5d4c"/>
+      <use href="#pine" x="752.7" y="319.6" width="6.1" height="18.1" fill="#2f5d4c"/>
+      <use href="#pine" x="524.3" y="316.6" width="6.9" height="20.4" fill="#2f5d4c"/>
+      <use href="#pine" x="308.0" y="318.3" width="7.4" height="21.7" fill="#2f5d4c"/>
+      <use href="#pine" x="556.6" y="312.6" width="8.8" height="25.8" fill="#2f5d4c"/>
+      <use href="#pine" x="14.4" y="314.4" width="7.8" height="22.9" fill="#2f5d4c"/>
+      <use href="#pine" x="202.8" y="321.2" width="5.0" height="14.6" fill="#2f5d4c"/>
+      <use href="#pine" x="153.8" y="320.4" width="5.2" height="15.2" fill="#2f5d4c"/>
+      <use href="#pine" x="197.2" y="318.7" width="7.0" height="20.6" fill="#2f5d4c"/>
+      <use href="#pine" x="402.7" y="319.0" width="7.1" height="20.8" fill="#2f5d4c"/>
+      <use href="#pine" x="792.1" y="313.8" width="8.1" height="23.7" fill="#2f5d4c"/>
+      <use href="#pine" x="57.0" y="314.1" width="7.9" height="23.1" fill="#2f5d4c"/>
+      <use href="#pine" x="31.4" y="325.1" width="9.4" height="27.5" fill="#1e4635"/>
+      <use href="#pine" x="371.5" y="313.9" width="11.9" height="34.9" fill="#1e4635"/>
+      <use href="#pine" x="481.3" y="303.5" width="15.2" height="44.8" fill="#1e4635"/>
+      <use href="#pine" x="330.2" y="313.5" width="12.6" height="37.2" fill="#1e4635"/>
+      <use href="#pine" x="285.9" y="311.0" width="13.1" height="38.4" fill="#1e4635"/>
+      <use href="#pine" x="441.8" y="309.7" width="13.5" height="39.8" fill="#1e4635"/>
+      <use href="#pine" x="231.8" y="318.7" width="10.0" height="29.4" fill="#1e4635"/>
+      <use href="#pine" x="27.3" y="308.2" width="13.8" height="40.6" fill="#1e4635"/>
+      <use href="#pine" x="305.1" y="312.0" width="13.8" height="40.5" fill="#1e4635"/>
+      <use href="#pine" x="32.5" y="308.2" width="15.2" height="44.8" fill="#1e4635"/>
+      <use href="#pine" x="53.1" y="319.1" width="11.4" height="33.4" fill="#1e4635"/>
+      <use href="#pine" x="377.1" y="323.5" width="10.0" height="29.4" fill="#1e4635"/>
+      <use href="#pine" x="411.9" y="312.8" width="13.6" height="39.9" fill="#1e4635"/>
+      <use href="#pine" x="367.5" y="310.9" width="14.3" height="42.0" fill="#1e4635"/>
+      <use href="#pine" x="476.5" y="310.8" width="12.8" height="37.7" fill="#1e4635"/>
+      <use href="#pine" x="360.3" y="323.9" width="8.5" height="25.1" fill="#1e4635"/>
+      <use href="#pine" x="416.7" y="314.9" width="11.5" height="33.7" fill="#1e4635"/>
+      <use href="#pine" x="529.3" y="320.5" width="10.1" height="29.8" fill="#1e4635"/>
+      <use href="#pine" x="458.8" y="309.0" width="14.0" height="41.1" fill="#1e4635"/>
+      <use href="#pine" x="417.0" y="308.0" width="15.3" height="45.0" fill="#1e4635"/>
+      <use href="#pine" x="582.9" y="322.7" width="9.0" height="26.5" fill="#1e4635"/>
+      <use href="#pine" x="707.7" y="314.2" width="12.8" height="37.7" fill="#1e4635"/>
+      <use href="#pine" x="280.7" y="310.3" width="13.3" height="39.1" fill="#1e4635"/>
+      <use href="#pine" x="445.5" y="313.0" width="12.9" height="37.9" fill="#1e4635"/>
+      <use href="#pine" x="597.7" y="319.5" width="10.0" height="29.5" fill="#1e4635"/>
+      <use href="#pine" x="776.4" y="309.2" width="14.7" height="43.3" fill="#1e4635"/>
+      <use href="#pine" x="26.5" y="318.3" width="10.2" height="30.0" fill="#1e4635"/>
+      <use href="#pine" x="335.7" y="324.9" width="8.9" height="26.3" fill="#1e4635"/>
+      <use href="#pine" x="428.9" y="322.5" width="8.8" height="25.9" fill="#1e4635"/>
+      <use href="#pine" x="534.6" y="312.9" width="12.9" height="37.9" fill="#1e4635"/>
+      <use href="#pine" x="293.7" y="321.8" width="9.7" height="28.6" fill="#1e4635"/>
+      <use href="#pine" x="267.7" y="309.3" width="14.4" height="42.4" fill="#1e4635"/>
+      <use href="#pine" x="52.4" y="306.8" width="14.2" height="41.8" fill="#1e4635"/>
+      <use href="#pine" x="494.1" y="323.2" width="9.8" height="28.7" fill="#1e4635"/>
+      <use href="#pine" x="332.4" y="307.5" width="14.2" height="41.8" fill="#1e4635"/>
+      <use href="#pine" x="287.4" y="305.5" width="15.6" height="45.8" fill="#1e4635"/>
+      <use href="#pine" x="253.4" y="310.3" width="13.7" height="40.4" fill="#1e4635"/>
+      <use href="#pine" x="731.2" y="318.0" width="10.9" height="32.1" fill="#1e4635"/>
+      <use href="#pine" x="73.2" y="326.6" width="8.7" height="25.7" fill="#1e4635"/>
+      <use href="#pine" x="60.5" y="316.2" width="11.8" height="34.7" fill="#1e4635"/>
+      <use href="#pine" x="541.3" y="308.4" width="14.0" height="41.1" fill="#1e4635"/>
+      <use href="#pine" x="54.3" y="310.5" width="13.1" height="38.6" fill="#1e4635"/>
+      <use href="#pine" x="58.6" y="309.6" width="13.6" height="39.9" fill="#1e4635"/>
+      <use href="#pine" x="550.6" y="322.3" width="9.2" height="27.1" fill="#1e4635"/>
+      <use href="#pine" x="280.8" y="319.6" width="10.9" height="32.1" fill="#1e4635"/>
+      <use href="#pine" x="87.7" y="315.0" width="12.4" height="36.5" fill="#1e4635"/>
+      <use href="#pine" x="727.3" y="308.6" width="15.0" height="44.1" fill="#1e4635"/>
+      <use href="#pine" x="345.2" y="321.3" width="10.4" height="30.7" fill="#1e4635"/>
+      <use href="#pine" x="246.5" y="305.4" width="15.2" height="44.6" fill="#1e4635"/>
+      <use href="#pine" x="710.3" y="317.3" width="10.9" height="32.0" fill="#1e4635"/>
+      <use href="#pine" x="286.9" y="317.1" width="11.1" height="32.7" fill="#1e4635"/>
+      <use href="#pine" x="303.9" y="312.6" width="12.4" height="36.4" fill="#1e4635"/>
+      <use href="#pine" x="630.5" y="308.3" width="14.4" height="42.4" fill="#1e4635"/>
+      <use href="#pine" x="443.3" y="308.2" width="13.8" height="40.7" fill="#1e4635"/>
+      <use href="#pine" x="700.6" y="324.9" width="8.3" height="24.5" fill="#1e4635"/>
+      <use href="#pine" x="406.3" y="314.2" width="12.4" height="36.5" fill="#1e4635"/>
+      <use href="#pine" x="766.0" y="309.6" width="14.2" height="41.7" fill="#1e4635"/>
+      <use href="#pine" x="44.2" y="309.4" width="14.1" height="41.3" fill="#1e4635"/>
+      <use href="#pine" x="60.4" y="308.2" width="13.7" height="40.2" fill="#1e4635"/>
+      <use href="#pine" x="712.8" y="310.5" width="12.9" height="38.0" fill="#1e4635"/>
+      <use href="#pine" x="108.6" y="313.5" width="13.0" height="38.3" fill="#1e4635"/>
+      <use href="#pine" x="189.4" y="308.3" width="13.9" height="40.8" fill="#1e4635"/>
+      <use href="#pine" x="411.7" y="319.1" width="11.1" height="32.7" fill="#1e4635"/>
+      <use href="#pine" x="263.7" y="314.0" width="13.2" height="38.8" fill="#1e4635"/>
+      <use href="#pine" x="388.2" y="310.8" width="13.6" height="39.9" fill="#1e4635"/>
+      <use href="#pine" x="560.9" y="319.5" width="11.2" height="33.0" fill="#1e4635"/>
+      <use href="#pine" x="653.7" y="308.6" width="14.5" height="42.8" fill="#1e4635"/>
+      <use href="#pine" x="637.3" y="308.6" width="14.8" height="43.6" fill="#1e4635"/>
+      <use href="#pine" x="760.2" y="315.7" width="12.1" height="35.5" fill="#1e4635"/>
+      <use href="#pine" x="562.4" y="318.7" width="11.3" height="33.3" fill="#1e4635"/>
+      <use href="#pine" x="329.5" y="308.4" width="13.7" height="40.3" fill="#1e4635"/>
+      <use href="#pine" x="788.1" y="322.2" width="9.4" height="27.7" fill="#1e4635"/>
+      <use href="#pine" x="158.3" y="319.7" width="10.3" height="30.4" fill="#1e4635"/>
+      <use href="#pine" x="770.6" y="317.5" width="10.5" height="30.8" fill="#1e4635"/>
+      <use href="#pine" x="84.9" y="310.2" width="14.0" height="41.1" fill="#1e4635"/>
+      <use href="#pine" x="137.8" y="314.2" width="11.6" height="34.1" fill="#1e4635"/>
+      <use href="#pine" x="463.0" y="327.7" width="8.4" height="24.8" fill="#1e4635"/>
+      <use href="#pine" x="82.0" y="320.1" width="9.8" height="28.8" fill="#1e4635"/>
+      <use href="#pine" x="182.0" y="314.5" width="12.6" height="37.1" fill="#1e4635"/>
+      <use href="#pine" x="174.0" y="318.7" width="10.3" height="30.2" fill="#1e4635"/>
+      <use href="#pine" x="132.8" y="320.9" width="10.5" height="30.9" fill="#1e4635"/>
+      <use href="#pine" x="432.7" y="317.5" width="11.7" height="34.5" fill="#1e4635"/>
+      <use href="#pine" x="200.9" y="308.3" width="15.0" height="44.1" fill="#1e4635"/>
+      <use href="#pine" x="266.0" y="305.7" width="15.3" height="45.1" fill="#1e4635"/>
+      <use href="#pine" x="381.8" y="324.0" width="8.5" height="25.1" fill="#1e4635"/>
+      <use href="#pine" x="752.5" y="319.5" width="11.0" height="32.5" fill="#1e4635"/>
+      <use href="#pine" x="417.0" y="320.5" width="10.2" height="30.0" fill="#1e4635"/>
+      <use href="#pine" x="787.2" y="322.1" width="9.9" height="29.2" fill="#1e4635"/>
+      <use href="#pine" x="3.2" y="318.2" width="10.9" height="32.2" fill="#1e4635"/>
+      <use href="#pine" x="631.1" y="314.2" width="12.7" height="37.3" fill="#1e4635"/>
+      <use href="#pine" x="120.5" y="317.7" width="10.6" height="31.1" fill="#1e4635"/>
+      <use href="#pine" x="201.5" y="317.0" width="12.0" height="35.4" fill="#1e4635"/>
+      <use href="#pine" x="504.5" y="323.1" width="10.2" height="29.9" fill="#1e4635"/>
+      <use href="#pine" x="420.7" y="307.8" width="13.9" height="40.9" fill="#1e4635"/>
+      <use href="#pine" x="-6.2" y="309.5" width="14.5" height="42.6" fill="#1e4635"/>
+      <use href="#pine" x="652.6" y="318.5" width="10.2" height="29.9" fill="#1e4635"/>
+      <use href="#pine" x="567.3" y="313.9" width="11.8" height="34.6" fill="#1e4635"/>
+      <use href="#pine" x="368.7" y="315.9" width="12.5" height="36.9" fill="#1e4635"/>
+      <use href="#pine" x="678.8" y="308.2" width="14.1" height="41.4" fill="#1e4635"/>
+      <use href="#pine" x="329.2" y="326.6" width="8.8" height="26.0" fill="#1e4635"/>
+      <use href="#pine" x="654.9" y="313.1" width="12.2" height="36.0" fill="#1e4635"/>
+      <use href="#pine" x="413.3" y="306.5" width="14.4" height="42.3" fill="#1e4635"/>
+      <use href="#pine" x="244.8" y="323.9" width="8.7" height="25.7" fill="#1e4635"/>
+      <use href="#pine" x="237.8" y="310.6" width="13.5" height="39.7" fill="#1e4635"/>
+      <use href="#pine" x="283.3" y="325.1" width="9.0" height="26.3" fill="#1e4635"/>
+      <use href="#pine" x="307.7" y="305.0" width="15.4" height="45.3" fill="#1e4635"/>
+      <use href="#pine" x="659.7" y="327.0" width="8.3" height="24.3" fill="#1e4635"/>
+      <use href="#pine" x="296.7" y="322.3" width="9.9" height="29.2" fill="#1e4635"/>
+      <use href="#pine" x="447.2" y="326.1" width="8.2" height="24.2" fill="#1e4635"/>
+      <use href="#pine" x="788.4" y="323.4" width="9.7" height="28.5" fill="#1e4635"/>
+      <use href="#pine" x="123.0" y="268.5" width="29.7" height="87.5" fill="#1b4130"/>
+      <use href="#pine" x="198.5" y="259.2" width="32.9" height="96.8" fill="#1b4130"/>
+      <use href="#pine" x="154.6" y="258.4" width="33.2" height="97.6" fill="#173a2a"/>
+      <use href="#pine" x="34.7" y="256.9" width="33.7" height="99.1" fill="#13321f"/>
+      <use href="#pine" x="-3.6" y="238.8" width="39.8" height="117.2" fill="#1b4130"/>
+      <use href="#pine" x="104.1" y="232.7" width="41.9" height="123.3" fill="#1b4130"/>
+      <use href="#pine" x="79.5" y="251.7" width="35.4" height="104.3" fill="#173a2a"/>
+      <use href="#pine" x="7.7" y="261.1" width="32.3" height="94.9" fill="#13321f"/>
+      <use href="#pine" x="127.9" y="277.4" width="26.7" height="78.6" fill="#173a2a"/>
+      <use href="#pine" x="61.9" y="211.2" width="49.2" height="144.8" fill="#13321f"/>
+      <use href="#pine" x="147.1" y="286.5" width="23.6" height="69.5" fill="#173a2a"/>
+      <use href="#pine" x="11.2" y="259.0" width="33.0" height="97.0" fill="#1b4130"/>
+      <use href="#pine" x="161.1" y="273.6" width="28.0" height="82.4" fill="#1b4130"/>
+      <use href="#pine" x="202.0" y="294.5" width="20.9" height="61.5" fill="#173a2a"/>
+      <use href="#pine" x="154.6" y="241.5" width="38.9" height="114.5" fill="#1b4130"/>
+      <use href="#pine" x="81.2" y="210.9" width="49.3" height="145.1" fill="#13321f"/>
+      <use href="#pine" x="-28.7" y="224.4" width="44.8" height="131.6" fill="#13321f"/>
+      <use href="#pine" x="41.2" y="208.6" width="50.1" height="147.4" fill="#173a2a"/>
+      <use href="#pine" x="130.1" y="248.2" width="36.6" height="107.8" fill="#173a2a"/>
+      <use href="#pine" x="35.9" y="258.1" width="33.3" height="97.9" fill="#1b4130"/>
+      <use href="#pine" x="133.9" y="283.7" width="24.6" height="72.3" fill="#1b4130"/>
+      <use href="#pine" x="19.8" y="242.0" width="38.8" height="114.0" fill="#1b4130"/>
     </g>
   </defs>
 
-  <rect width="800" height="400" fill="url(#sky)"/>
-  <g filter="url(#soft)" fill="#ffffff">
-    <ellipse cx="180" cy="90" rx="130" ry="20" opacity="0.6"/>
-    <ellipse cx="270" cy="112" rx="90" ry="12" opacity="0.45"/>
-    <ellipse cx="540" cy="70" rx="110" ry="16" opacity="0.45"/>
-  </g>
+  <rect width="800" height="352" fill="url(#sky)"/>
   <use href="#land"/>
-  <rect y="260" width="800" height="100" fill="url(#haze)"/>
+  <rect width="800" height="352" fill="url(#sun)"/>
 
-  <rect y="400" width="800" height="200" fill="url(#lake)"/>
-  <g clip-path="url(#water)" opacity="0.5">
-    <use href="#land" transform="translate(0 800) scale(1 -1)" filter="url(#ripple)"/>
+  <rect y="352" width="800" height="148" fill="url(#lake)"/>
+  <g clip-path="url(#water)" opacity="0.55">
+    <use href="#land" transform="translate(0 704) scale(1 -1)" filter="url(#ripple)"/>
   </g>
-  <g stroke="#ffffff" stroke-linecap="round" opacity="0.35">
-    <line x1="80" y1="430" x2="220" y2="430" stroke-width="1.5"/>
-    <line x1="420" y1="452" x2="600" y2="452" stroke-width="1.5"/>
-    <line x1="160" y1="490" x2="300" y2="490" stroke-width="1.2"/>
-    <line x1="520" y1="520" x2="700" y2="520" stroke-width="1.2"/>
-    <line x1="60" y1="560" x2="190" y2="560" stroke-width="1"/>
-  </g>
+  <rect y="352" width="800" height="3" fill="#0f2a1f" opacity="0.5"/>
 </svg>
