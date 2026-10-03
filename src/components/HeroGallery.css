@@ -1,8 +1,12 @@
 /* Phones and tablets: a tall frame that sticks below the header for a while
    as you scroll, so the photos get time to move */
-.hero-gallery {
+.hero-gallery-frame {
   position: sticky;
   top: calc(var(--header-height) + 1rem);
+  animation: fade-in 0.6s 0.1s ease both;
+}
+
+.hero-gallery {
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: start;
@@ -12,7 +16,36 @@
   /* Photos fade softly in and out at the top and bottom edges */
   mask-image: linear-gradient(transparent, #000 7%, #000 93%, transparent);
   -webkit-mask-image: linear-gradient(transparent, #000 7%, #000 93%, transparent);
-  animation: fade-in 0.6s 0.1s ease both;
+}
+
+/* Small "Design concepts" tag pinned to the top corner of the gallery */
+.hero-gallery__label {
+  position: absolute;
+  top: 0.25rem;
+  right: 0.5rem;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.3rem 0.7rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--color-brown);
+  background: rgb(255 255 255 / 0.85);
+  border: 1px solid var(--color-line);
+  border-radius: 999px;
+  box-shadow: 0 4px 12px -6px rgb(29 43 58 / 0.25);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.hero-gallery__label::before {
+  content: '';
+  width: 0.375rem;
+  height: 0.375rem;
+  background: var(--color-brown-soft);
+  border-radius: 50%;
 }
 
 .hero-gallery__column {
@@ -91,8 +124,12 @@
 
 @media (min-width: 60rem) {
   /* Desktop: the whole hero is pinned instead (see Hero.css) */
+  .hero-gallery-frame {
+    position: relative;
+    top: auto;
+  }
+
   .hero-gallery {
-    position: static;
     gap: 1rem;
     height: min(calc(100svh - var(--header-height) - 4rem), 40rem);
   }

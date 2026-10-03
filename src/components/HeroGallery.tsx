@@ -109,9 +109,13 @@ export function HeroGallery({ sectionRef }: HeroGalleryProps) {
 
   return (
     // Decorative scenery, so it's hidden from screen readers
-    <div className="hero-gallery" ref={galleryRef} aria-hidden="true">
-      {column(heroPhotos.left, leftRef)}
-      {column(heroPhotos.right, rightRef)}
+    <div className="hero-gallery-frame" aria-hidden="true">
+      <div className="hero-gallery" ref={galleryRef}>
+        {column(heroPhotos.left, leftRef)}
+        {column(heroPhotos.right, rightRef)}
+      </div>
+      {/* Makes clear these are example designs, not finished client projects */}
+      <p className="hero-gallery__label">Design concepts</p>
     </div>
   )
 }
