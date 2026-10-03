@@ -12,6 +12,9 @@ export function Footer() {
               <a href={`mailto:${contact.email}`}>Email</a>
             </li>
           )}
+          <li>
+            <a href={`${import.meta.env.BASE_URL}privacy.html`}>Privacy</a>
+          </li>
           {contact.linkedin && (
             <li>
               <a href={contact.linkedin} target="_blank" rel="noreferrer">

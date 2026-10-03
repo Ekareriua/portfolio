@@ -46,6 +46,10 @@ src/
 - **Add a new section:** create a component using `<Section>`, add it to `App.tsx`,
   and add its id to `src/data/navigation.ts`.
 - **Change colours:** edit the variables at the top of `src/index.css`.
+- **Privacy notice:** `src/components/PrivacyPage.tsx` (page: `privacy.html`). Update the
+  `lastUpdated` date at the top whenever you change it.
+- **Fonts:** Inter and Space Grotesk are hosted on the site itself (`public/fonts`, from Google
+  Fonts under the SIL Open Font License), declared at the top of `src/index.css`.
 
 ## Hero images
 

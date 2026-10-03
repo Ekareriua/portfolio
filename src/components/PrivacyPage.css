@@ -1,0 +1,89 @@
+/* ---------- Simple top bar ---------- */
+
+.privacy-bar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--header-height);
+}
+
+.privacy-bar__logo {
+  font-size: 1.125rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--color-ink);
+  text-decoration: none;
+}
+
+.privacy-bar__accent {
+  color: var(--color-brown);
+}
+
+.privacy-bar__back {
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.privacy-bar__back:hover {
+  color: var(--color-blue);
+}
+
+/* ---------- Notice text ---------- */
+
+.privacy {
+  max-width: calc(44rem + var(--gutter) * 2);
+  padding-block: clamp(2.5rem, 7vw, 4.5rem) var(--section-space);
+}
+
+.privacy__title {
+  margin-top: 0.75rem;
+  font-size: clamp(2.25rem, 6vw, 3rem);
+}
+
+.privacy__updated {
+  margin-top: 0.75rem;
+  font-size: 0.875rem;
+  color: var(--color-text-3);
+}
+
+.privacy__lead {
+  margin-top: 2rem;
+  font-size: 1.125rem;
+}
+
+.privacy h2 {
+  margin-top: 2.75rem;
+  font-size: 1.375rem;
+}
+
+.privacy p,
+.privacy ul {
+  margin-top: 0.875rem;
+  line-height: 1.7;
+  color: var(--color-text-2);
+}
+
+.privacy ul {
+  padding-left: 1.25rem;
+}
+
+.privacy li + li {
+  margin-top: 0.5rem;
+}
+
+.privacy strong {
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+.privacy a {
+  color: var(--color-text);
+  text-decoration-color: var(--color-brown-soft);
+  text-underline-offset: 0.2em;
+}
+
+.privacy a:hover {
+  color: var(--color-blue);
+}
