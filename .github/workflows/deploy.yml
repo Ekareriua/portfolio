@@ -29,6 +29,8 @@ jobs:
 
       - run: npm ci
       - run: npm run build
+        env:
+          BASE_PATH: /portfolio/ # GitHub Pages serves the site from /portfolio/
 
       - uses: actions/upload-pages-artifact@v3
         with:

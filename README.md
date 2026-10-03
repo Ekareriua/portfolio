@@ -13,9 +13,14 @@ npm run preview  # preview the production build
 
 ## Deployment
 
-The site is published with GitHub Pages at **https://kate-utina.github.io/portfolio/**.
-Every push to `main` rebuilds and redeploys it automatically
-(see `.github/workflows/deploy.yml`). Progress is shown in the repo's **Actions** tab.
+Every push to `main` rebuilds and redeploys the site automatically:
+
+- **Cloudflare** (connected to the GitHub repo) serves it from the root, e.g.
+  `https://portfolio.utina-kate.workers.dev/`.
+- **GitHub Pages** serves it at **https://kate-utina.github.io/portfolio/**
+  (see `.github/workflows/deploy.yml`, which sets `BASE_PATH=/portfolio/`).
+
+Locally, `npm run dev` serves it at http://localhost:5173/.
 
 ## Where things live
 
