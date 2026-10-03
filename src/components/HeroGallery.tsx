@@ -81,12 +81,17 @@ export function HeroGallery({ sectionRef }: HeroGalleryProps) {
     }
   }, [sectionRef])
 
-  // Each photo keeps its own shape, so the heights vary naturally
+  // Each photo keeps its own shape, so the heights vary naturally.
+  // The title and description fade in on hover.
   const column = (photos: HeroPhoto[], ref: RefObject<HTMLDivElement | null>) => (
     <div className="hero-gallery__column" ref={ref}>
       {photos.map((photo) => (
         <div key={photo.src} className="hero-gallery__photo" style={{ aspectRatio: photo.ratio }}>
           <img src={`${import.meta.env.BASE_URL}${photo.src}`} alt="" />
+          <div className="hero-gallery__caption">
+            <p className="hero-gallery__title">{photo.title}</p>
+            <p className="hero-gallery__description">{photo.description}</p>
+          </div>
         </div>
       ))}
     </div>

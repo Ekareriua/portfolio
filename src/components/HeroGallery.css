@@ -23,6 +23,7 @@
 }
 
 .hero-gallery__photo {
+  position: relative;
   flex-shrink: 0;
   overflow: hidden;
   /* Each photo's shape (aspect-ratio) is set in HeroGallery.tsx */
@@ -34,6 +35,58 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+/* ---------- Title and description on hover ---------- */
+
+.hero-gallery__caption {
+  position: absolute;
+  inset: auto 0 0;
+  padding: 3rem 1rem 0.875rem;
+  color: #fff;
+  background: linear-gradient(
+    to top,
+    rgb(29 43 58 / 0.94) 0%,
+    rgb(29 43 58 / 0.78) 50%,
+    rgb(29 43 58 / 0) 100%
+  );
+  text-shadow: 0 1px 2px rgb(0 0 0 / 0.25);
+  opacity: 0;
+  transform: translateY(0.5rem);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+}
+
+.hero-gallery__title {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.hero-gallery__description {
+  margin-top: 0.25rem;
+  font-size: 0.8125rem;
+  line-height: 1.4;
+  opacity: 0.88;
+}
+
+/* Only on devices that can hover (mouse or trackpad) */
+@media (hover: hover) {
+  .hero-gallery__photo:hover .hero-gallery__caption {
+    opacity: 1;
+    transform: none;
+  }
+
+  .hero-gallery__photo:hover img {
+    transform: scale(1.04);
+  }
+}
+
+@media (hover: none) {
+  .hero-gallery__caption {
+    display: none;
+  }
 }
 
 @media (min-width: 60rem) {
