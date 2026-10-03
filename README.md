@@ -13,7 +13,7 @@ npm run preview  # preview the production build
 
 ## Deployment
 
-The site is published with GitHub Pages at **https://ekareriua.github.io/portfolio/**.
+The site is published with GitHub Pages at **https://kate-utina.github.io/portfolio/**.
 Every push to `main` rebuilds and redeploys it automatically
 (see `.github/workflows/deploy.yml`). Progress is shown in the repo's **Actions** tab.
 
@@ -23,7 +23,7 @@ Every push to `main` rebuilds and redeploys it automatically
 src/
   data/          ← edit content here
     projects.ts    projects shown in the Projects section
-    skills.ts      skill groups + "Currently learning" list
+    skills.ts      skill groups
     links.ts       email, GitHub and LinkedIn
     navigation.ts  menu items
   components/    ← one component (+ its CSS file) per section
@@ -32,12 +32,12 @@ src/
 
 ## Common changes
 
-- **Add a project:** copy the object in `src/data/projects.ts` and change the values.
+- **Add a project:** add an object to the list in `src/data/projects.ts` (there's an
+  example in the comment). The Projects section and menu link appear automatically.
 - **Add a screenshot:** put the image in `public/projects/` and set
   `image: 'projects/your-file.png'` on the project (no leading slash).
 - **Add GitHub / demo links:** set `githubUrl` and `liveUrl` on the project.
 - **Add contact links:** fill in `src/data/links.ts`. Empty values show "Coming soon".
-- **Mark a skill as still learning:** set `learning: true` in `src/data/skills.ts`.
 - **Add a new section:** create a component using `<Section>`, add it to `App.tsx`,
   and add its id to `src/data/navigation.ts`.
 - **Change colours:** edit the variables at the top of `src/index.css`.

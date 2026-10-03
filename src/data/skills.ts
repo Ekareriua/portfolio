@@ -1,56 +1,23 @@
-export type Skill = {
-  name: string
-  // true = something I'm actively learning and building confidence with
-  learning?: boolean
-}
-
 export type SkillGroup = {
   title: string
-  skills: Skill[]
+  skills: string[]
 }
 
 export const skillGroups: SkillGroup[] = [
   {
     title: 'Frontend',
-    skills: [
-      { name: 'JavaScript' },
-      { name: 'TypeScript', learning: true },
-      { name: 'React', learning: true },
-      { name: 'HTML' },
-      { name: 'CSS' },
-    ],
+    skills: ['JavaScript', 'TypeScript', 'React', 'HTML', 'CSS'],
   },
   {
     title: 'Backend',
-    skills: [
-      { name: 'Node.js', learning: true },
-      { name: 'Express', learning: true },
-      { name: 'REST APIs', learning: true },
-    ],
+    skills: ['Node.js', 'Express', 'REST APIs'],
   },
   {
     title: 'Databases',
-    skills: [
-      { name: 'MySQL', learning: true },
-      { name: 'MongoDB', learning: true },
-      { name: 'SQL', learning: true },
-    ],
+    skills: ['MySQL', 'MongoDB', 'SQL'],
   },
   {
     title: 'Tools',
-    skills: [
-      { name: 'Git' },
-      { name: 'GitHub' },
-      { name: 'Docker', learning: true },
-      { name: 'Vite' },
-    ],
+    skills: ['Git', 'GitHub', 'Docker', 'Vite'],
   },
-]
-
-export const currentlyLearning: string[] = [
-  'React and TypeScript',
-  'Backend development',
-  'Automated testing',
-  'Databases',
-  'Deployment and DevOps fundamentals',
 ]

@@ -27,7 +27,7 @@ export function Contact() {
   return (
     <Section
       id="contact"
-      label="04 — Say hello"
+      label="Say hello"
       title="Let's connect"
       intro={
         <p>

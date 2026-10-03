@@ -3,10 +3,10 @@ import './About.css'
 
 export function About() {
   return (
-    <Section id="about" label="02 — Background" title="About Me">
+    <Section id="about" label="Background" title="About Me">
       <div className="about">
         <p className="about__lead">
-          I'm a junior web developer focused on JavaScript and modern web development.
+          I'm a web developer focused on JavaScript and modern web development.
         </p>
         <div className="about__text">
           <p>

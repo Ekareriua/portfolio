@@ -4,6 +4,7 @@ import { Footer } from './components/Footer'
 import { Header } from './components/Header'
 import { Hero } from './components/Hero'
 import { Projects } from './components/Projects'
+import { projects } from './data/projects'
 import { Skills } from './components/Skills'
 
 function App() {
@@ -15,7 +16,7 @@ function App() {
       <Header />
       <main id="main">
         <Hero />
-        <Projects />
+        {projects.length > 0 && <Projects />}
         <About />
         <Skills />
         <Contact />

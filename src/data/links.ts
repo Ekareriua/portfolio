@@ -4,6 +4,6 @@
 
 export const contact = {
   email: '', // e.g. 'you@example.com'
-  github: '', // e.g. 'https://github.com/your-username'
+  github: 'https://github.com/kate-utina',
   linkedin: '', // e.g. 'https://www.linkedin.com/in/your-profile'
 }
