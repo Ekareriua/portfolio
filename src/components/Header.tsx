@@ -33,7 +33,18 @@ export function Header() {
     <header className={`site-header ${scrolled ? 'site-header--scrolled' : ''}`}>
       <div className="container site-header__inner">
         <a href="#home" className="site-header__logo">
-          <span className="site-header__underline">U</span>
+          <span className="site-header__u">
+            U
+            {/* Brown "smile" under the U */}
+            <svg
+              className="site-header__smile"
+              viewBox="0 0 40 12"
+              preserveAspectRatio="none"
+              aria-hidden="true"
+            >
+              <path d="M3 3 Q20 13 37 3" />
+            </svg>
+          </span>
           <span className="site-header__accent">.K</span>ate
         </a>
 
