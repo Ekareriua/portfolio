@@ -53,8 +53,8 @@ export function HeroGallery({ sectionRef }: HeroGalleryProps) {
       // travel = how far each column moves; lower = slower, calmer movement.
       const photos = left.children as HTMLCollectionOf<HTMLElement>
       const step = photos[1].offsetTop - photos[0].offsetTop
-      const stagger = step * 1.1
-      const travel = Math.min(step * 1.4, left.offsetHeight - gallery.clientHeight - stagger)
+      const stagger = step * 0.96
+      const travel = Math.min(step * 1.54, left.offsetHeight - gallery.clientHeight - stagger)
       left.style.transform = `translate3d(0, ${-progress * travel}px, 0)`
       right.style.transform = `translate3d(0, ${-(1 - progress) * travel - stagger}px, 0)`
     }
