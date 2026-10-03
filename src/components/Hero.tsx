@@ -13,7 +13,7 @@ export function Hero() {
     <section id="home" className="hero" aria-labelledby="hero-heading">
       <div className="container hero__inner">
         <div className="hero__content">
-          <p className="eyebrow">Hi, I'm Kate</p>
+          <p className="eyebrow eyebrow--dot">Hi, I'm Kate</p>
           <h1 id="hero-heading" className="hero__title">
             Software Developer
           </h1>

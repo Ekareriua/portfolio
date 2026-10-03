@@ -4,6 +4,7 @@
 
 :root {
   --font: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-display: 'Fraunces', Georgia, serif; /* the big "Software Developer" headline */
 
   /* Palette: ink blue, white, soft brown and forest green (from the hero photo) */
   --color-ink: #1d2b3a; /* headings, text and the main button */
@@ -158,6 +159,16 @@ a {
   height: 2px;
   background: var(--color-brown-soft);
   border-radius: 2px;
+}
+
+/* Variant: the line ends in a small dot  —• */
+.eyebrow--dot::before {
+  width: 1.75rem;
+  height: 6px;
+  border-radius: 0;
+  background:
+    radial-gradient(circle closest-side, var(--color-brown) 85%, transparent) right center / 6px 6px no-repeat,
+    linear-gradient(var(--color-brown-soft), var(--color-brown-soft)) left center / calc(100% - 3px) 2px no-repeat;
 }
 
 .button {
