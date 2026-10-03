@@ -13,12 +13,16 @@
   --color-line-strong: #c9ccd2;
   --color-surface: #ffffff;
   --color-surface-2: #f6f7f8;
-  --color-dark: #1c1f24; /* main button */
-  --color-dark-hover: #34383f;
+  --color-dark: #1c1f24;
+  --color-accent: #2a6f97; /* lake blue, taken from the hero photo */
+  --color-accent-hover: #215a7b;
+  --color-accent-soft: #e4eff6;
   --color-focus: #2563eb;
 
   /* Soft light from the top-left fading into pale grey */
-  --page-background: linear-gradient(160deg, #fcfcfd 0%, #f2f3f5 45%, #e9ebee 100%);
+  --page-background:
+    radial-gradient(ellipse 45% 50% at 78% 22%, rgb(42 111 151 / 0.12), transparent 70%),
+    linear-gradient(160deg, #fcfcfd 0%, #f2f3f5 45%, #e9ebee 100%);
 
   /* Shape and spacing */
   --radius-sm: 6px;
@@ -110,8 +114,8 @@ a {
 }
 
 ::selection {
-  background: var(--color-dark);
-  color: #fff;
+  background: var(--color-accent-soft);
+  color: var(--color-text);
 }
 
 /* =========================================================
@@ -129,13 +133,24 @@ a {
    Reusable pieces
    ========================================================= */
 
-/* Small uppercase label above headings */
+/* Small uppercase label above headings, with a short accent line */
 .eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
   font-size: 0.8125rem;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--color-text-3);
+  color: var(--color-accent);
+}
+
+.eyebrow::before {
+  content: '';
+  width: 1.5rem;
+  height: 2px;
+  background: currentColor;
+  border-radius: 2px;
 }
 
 .button {
@@ -156,11 +171,12 @@ a {
 
 .button--primary {
   color: #fff;
-  background: var(--color-dark);
+  background: var(--color-accent);
+  box-shadow: 0 6px 16px -8px rgb(42 111 151 / 0.6);
 }
 
 .button--primary:hover {
-  background: var(--color-dark-hover);
+  background: var(--color-accent-hover);
 }
 
 .button--secondary {
@@ -171,6 +187,7 @@ a {
 
 .button--secondary:hover {
   background: var(--color-surface);
+  border-color: var(--color-accent);
 }
 
 /* Rounded labels for technologies and skills */
@@ -187,9 +204,8 @@ a {
   padding: 0.3125rem 0.8125rem;
   font-size: 0.875rem;
   font-weight: 500;
-  color: var(--color-text);
-  background: var(--color-surface);
-  border: 1px solid var(--color-line);
+  color: var(--color-accent-hover);
+  background: var(--color-accent-soft);
   border-radius: 999px;
 }
 
@@ -203,6 +219,7 @@ a {
 }
 
 .text-link:hover {
+  color: var(--color-accent);
   text-decoration-color: currentColor;
 }
 
@@ -231,7 +248,7 @@ a {
   padding: 0.75rem 1rem;
   font-weight: 500;
   color: #fff;
-  background: var(--color-dark);
+  background: var(--color-accent);
   border-radius: var(--radius-sm);
   transform: translateY(-200%);
 }

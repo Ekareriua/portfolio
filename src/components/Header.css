@@ -30,6 +30,10 @@
   text-decoration: none;
 }
 
+.site-header__dot {
+  color: var(--color-accent);
+}
+
 /* ---------- Mobile menu button ---------- */
 
 .menu-toggle {
@@ -144,6 +148,7 @@
   }
 
   .site-nav__link:hover {
+    color: var(--color-accent);
     background: none;
   }
 

@@ -39,7 +39,7 @@
 .hero__media {
   overflow: hidden;
   aspect-ratio: 16 / 10;
-  background: #dfe5ea; /* shows while the photo loads */
+  background: var(--color-accent-soft); /* shows while the photo loads */
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-photo);
   animation: fade-in 0.5s 0.1s ease both;
