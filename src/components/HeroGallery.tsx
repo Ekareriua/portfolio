@@ -5,10 +5,10 @@ import './HeroGallery.css'
 const photoUrl = (id: string) =>
   `https://images.unsplash.com/${id}?w=700&q=75&auto=format&fit=crop`
 
-// Each column shows all five photos in a different order, so the frame is never empty.
-// The orders are chosen so the same photo doesn't end up side by side.
+// Each column shows five photos (numbers are positions in heroPhotos).
+// The orders are chosen so the same photo never appears side by side.
 const leftOrder = [0, 1, 2, 3, 4]
-const rightOrder = [3, 4, 1, 2, 0]
+const rightOrder = [0, 3, 5, 6, 4]
 
 const clamp = (value: number) => Math.min(1, Math.max(0, value))
 
@@ -41,19 +41,20 @@ export function HeroGallery({ sectionRef }: HeroGalleryProps) {
     }
 
     // Move the columns for a given progress: left goes up, right comes down.
-    // The right column always sits half a photo lower than the left, so the
-    // tiles stay staggered and never line up into a grid.
+    // The right column is offset from the left so the tiles stay staggered
+    // and don't line up into a grid when the photos come to rest.
     function apply(progress: number) {
       const gallery = galleryRef.current
       const left = leftRef.current
       const right = rightRef.current
       if (!gallery || !left || !right) return
 
-      // The columns travel exactly two photos (photo height + gap), on every screen size
+      // Measured in "steps" (one photo height + gap) so it works on every screen size.
+      // travel = how far each column moves; lower = slower, calmer movement.
       const photos = left.children as HTMLCollectionOf<HTMLElement>
       const step = photos[1].offsetTop - photos[0].offsetTop
-      const stagger = step / 2
-      const travel = Math.min(step * 2, left.offsetHeight - gallery.clientHeight - stagger)
+      const stagger = step * 1.1
+      const travel = Math.min(step * 1.4, left.offsetHeight - gallery.clientHeight - stagger)
       left.style.transform = `translate3d(0, ${-progress * travel}px, 0)`
       right.style.transform = `translate3d(0, ${-(1 - progress) * travel - stagger}px, 0)`
     }

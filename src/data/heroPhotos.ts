@@ -6,4 +6,6 @@ export const heroPhotos = [
   'photo-1566463486676-00a757b3960b', // turquoise lake in the forest
   'photo-1763608342562-adeb23f2e12a', // lake between pine-covered slopes
   'photo-1788697599493-98465a126216', // wide blue lake and mountains
+  'photo-1780515851953-5e595ff311c9', // green valley with a lake
+  'photo-1779988563101-d264f3abeb66', // misty mountain bowl and forest
 ]
