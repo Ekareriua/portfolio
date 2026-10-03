@@ -35,11 +35,9 @@ export function HeroGallery({ sectionRef }: HeroGalleryProps) {
     function measure() {
       const section = sectionRef.current
       if (!section) return
-      // Desktop: the hero is pinned, so progress runs over the extra pinned height.
-      // Mobile (not pinned): progress runs while the hero scrolls out of view.
-      const pinnedRange = section.offsetHeight - (window.innerHeight - section.offsetTop)
-      const range = pinnedRange > 100 ? pinnedRange : section.offsetHeight
-      target = clamp(window.scrollY / range)
+      // Progress runs from the top of the page until the hero has scrolled
+      // completely out of view, so the photos keep moving the whole time
+      target = clamp(window.scrollY / section.offsetHeight)
     }
 
     // Move the columns for a given progress: left goes up, right comes down.
