@@ -1,0 +1,14 @@
+// Cloudflare settings for the site (Workers static assets).
+// "name" must match the Worker's name in the Cloudflare dashboard.
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "portfolio",
+  "compatibility_date": "2026-10-01",
+  "assets": {
+    // The built site
+    "directory": "./dist",
+    // Addresses that don't exist get 404.html with a proper 404 status
+    // (instead of quietly showing the homepage)
+    "not_found_handling": "404-page"
+  }
+}

@@ -1,0 +1,29 @@
+.page-bar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--header-height);
+}
+
+.page-bar__logo {
+  font-size: 1.125rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--color-ink);
+  text-decoration: none;
+}
+
+.page-bar__accent {
+  color: var(--color-brown);
+}
+
+.page-bar__back {
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.page-bar__back:hover {
+  color: var(--color-blue);
+}

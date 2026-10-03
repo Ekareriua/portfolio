@@ -10,11 +10,12 @@ export default defineConfig({
   // /portfolio/, so the GitHub deploy workflow sets BASE_PATH=/portfolio/.
   base: process.env.BASE_PATH || '/',
   build: {
-    // Two pages: the main site and the privacy notice
+    // Three pages: the main site, the privacy notice and the "not found" page
     rollupOptions: {
       input: {
         main: fileURLToPath(new URL('./index.html', import.meta.url)),
         privacy: fileURLToPath(new URL('./privacy.html', import.meta.url)),
+        notFound: fileURLToPath(new URL('./404.html', import.meta.url)),
       },
     },
   },

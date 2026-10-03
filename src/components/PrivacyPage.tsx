@@ -1,25 +1,15 @@
 import { contact } from '../data/links'
 import { Footer } from './Footer'
+import { PageBar } from './PageBar'
 import './PrivacyPage.css'
 
 // Update this date whenever you change the notice
 const lastUpdated = '4 October 2026'
 
-const home = import.meta.env.BASE_URL
-
 export function PrivacyPage() {
   return (
     <>
-      <header className="privacy-bar">
-        <div className="container privacy-bar__inner">
-          <a href={home} className="privacy-bar__logo">
-            U<span className="privacy-bar__accent">.K</span>ate
-          </a>
-          <a href={home} className="privacy-bar__back">
-            ← Back to the site
-          </a>
-        </div>
-      </header>
+      <PageBar />
 
       <main className="container privacy">
         <h1 className="privacy__title">Privacy</h1>

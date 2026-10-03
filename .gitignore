@@ -28,3 +28,6 @@ dist-ssr
 
 # Source collages for the hero images (not part of the site)
 src/temp/
+
+# Cloudflare local dev files
+.wrangler/
