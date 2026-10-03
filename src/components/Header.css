@@ -31,7 +31,7 @@
 }
 
 .site-header__dot {
-  color: var(--color-accent);
+  color: var(--color-brown);
 }
 
 /* ---------- Mobile menu button ---------- */
@@ -148,7 +148,7 @@
   }
 
   .site-nav__link:hover {
-    color: var(--color-accent);
+    color: var(--color-blue);
     background: none;
   }
 

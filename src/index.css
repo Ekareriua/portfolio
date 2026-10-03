@@ -5,30 +5,37 @@
 :root {
   --font: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
 
-  /* Colours */
-  --color-text: #16181d;
-  --color-text-2: #464b53; /* paragraphs */
-  --color-text-3: #6a6f78; /* small labels */
-  --color-line: #e0e2e6; /* hairlines and borders */
-  --color-line-strong: #c9ccd2;
-  --color-surface: #ffffff;
-  --color-surface-2: #f6f7f8;
-  --color-dark: #1c1f24;
-  --color-accent: #2a6f97; /* lake blue, taken from the hero photo */
-  --color-accent-hover: #215a7b;
-  --color-accent-soft: #e4eff6;
-  --color-focus: #2563eb;
+  /* Palette: ink blue, white, soft brown and forest green (from the hero photo) */
+  --color-ink: #1d2b3a; /* headings, text and the main button */
+  --color-ink-hover: #2f4a63;
+  --color-blue: #2a6f97; /* links and hover states */
+  --color-brown: #7a5536; /* small labels */
+  --color-brown-soft: #c4a484; /* decorative lines and dots */
+  --color-brown-tint: #f3ebe1; /* tag backgrounds */
+  --color-green: #356049; /* "open to projects" badge */
+  --color-green-dot: #4f8a68;
+  --color-green-tint: #e5efe8;
 
-  /* Soft light from the top-left fading into pale grey */
+  --color-text: var(--color-ink);
+  --color-text-2: #4d5560; /* paragraphs */
+  --color-text-3: #5d626a; /* small grey labels */
+  --color-line: #e6e0d8; /* warm hairlines and borders */
+  --color-line-strong: #cdbfae;
+  --color-surface: #ffffff;
+  --color-surface-2: #faf8f5;
+  --color-focus: var(--color-blue);
+
+  /* Warm white with a soft blue glow by the photo and a sandy glow below */
   --page-background:
-    radial-gradient(ellipse 45% 50% at 78% 22%, rgb(42 111 151 / 0.12), transparent 70%),
-    linear-gradient(160deg, #fcfcfd 0%, #f2f3f5 45%, #e9ebee 100%);
+    radial-gradient(ellipse 45% 50% at 80% 20%, rgb(42 111 151 / 0.1), transparent 70%),
+    radial-gradient(ellipse 50% 45% at 0% 100%, rgb(196 164 132 / 0.22), transparent 70%),
+    linear-gradient(160deg, #fdfcfa 0%, #f7f3ee 50%, #efe9e1 100%);
 
   /* Shape and spacing */
   --radius-sm: 6px;
   --radius-md: 10px;
   --radius-lg: 14px;
-  --shadow-photo: 0 1px 2px rgb(16 24 40 / 0.05), 0 24px 48px -24px rgb(16 24 40 / 0.35);
+  --shadow-photo: 0 1px 2px rgb(29 43 58 / 0.05), 0 24px 48px -24px rgb(29 43 58 / 0.4);
 
   --container: 70rem;
   --gutter: 1.5rem;
@@ -66,7 +73,7 @@ body {
   font-size: 1rem;
   line-height: 1.6;
   color: var(--color-text);
-  background: #f2f3f5;
+  background: #f7f3ee;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -114,8 +121,8 @@ a {
 }
 
 ::selection {
-  background: var(--color-accent-soft);
-  color: var(--color-text);
+  background: var(--color-brown-tint);
+  color: var(--color-ink);
 }
 
 /* =========================================================
@@ -142,14 +149,14 @@ a {
   font-weight: 600;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--color-accent);
+  color: var(--color-brown);
 }
 
 .eyebrow::before {
   content: '';
   width: 1.5rem;
   height: 2px;
-  background: currentColor;
+  background: var(--color-brown-soft);
   border-radius: 2px;
 }
 
@@ -171,23 +178,22 @@ a {
 
 .button--primary {
   color: #fff;
-  background: var(--color-accent);
-  box-shadow: 0 6px 16px -8px rgb(42 111 151 / 0.6);
+  background: var(--color-ink);
 }
 
 .button--primary:hover {
-  background: var(--color-accent-hover);
+  background: var(--color-ink-hover);
 }
 
 .button--secondary {
-  color: var(--color-text);
-  background: var(--color-surface-2);
+  color: var(--color-ink);
+  background: var(--color-surface);
   border-color: var(--color-line-strong);
 }
 
 .button--secondary:hover {
-  background: var(--color-surface);
-  border-color: var(--color-accent);
+  background: var(--color-brown-tint);
+  border-color: var(--color-brown-soft);
 }
 
 /* Rounded labels for technologies and skills */
@@ -204,8 +210,8 @@ a {
   padding: 0.3125rem 0.8125rem;
   font-size: 0.875rem;
   font-weight: 500;
-  color: var(--color-accent-hover);
-  background: var(--color-accent-soft);
+  color: var(--color-brown);
+  background: var(--color-brown-tint);
   border-radius: 999px;
 }
 
@@ -219,7 +225,7 @@ a {
 }
 
 .text-link:hover {
-  color: var(--color-accent);
+  color: var(--color-blue);
   text-decoration-color: currentColor;
 }
 
@@ -248,7 +254,7 @@ a {
   padding: 0.75rem 1rem;
   font-weight: 500;
   color: #fff;
-  background: var(--color-accent);
+  background: var(--color-ink);
   border-radius: var(--radius-sm);
   transform: translateY(-200%);
 }

@@ -36,19 +36,14 @@
 
 .contact-item__link::after {
   content: ' ↗';
-  color: var(--color-accent);
+  color: var(--color-blue);
   transition: color 0.15s ease;
 }
 
 .contact-item__link:hover {
-  color: var(--color-accent);
+  color: var(--color-blue);
   text-decoration: underline;
   text-underline-offset: 0.25em;
-}
-
-.contact-item__pending {
-  font-size: 1.125rem;
-  color: var(--color-text-3);
 }
 
 @media (min-width: 40rem) {

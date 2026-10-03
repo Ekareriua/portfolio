@@ -6,7 +6,7 @@ export function About() {
     <Section id="about" label="Background" title="About Me">
       <div className="about">
         <p className="about__lead">
-          I'm a web developer focused on JavaScript and modern web development.
+          I'm a software developer focused on JavaScript and modern web development.
         </p>
         <div className="about__text">
           <p>

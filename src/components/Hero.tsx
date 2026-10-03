@@ -1,5 +1,4 @@
 import { contact } from '../data/links'
-import { projects } from '../data/projects'
 import './Hero.css'
 
 // Photo by Nathan Dumlao on Unsplash (free to use under the Unsplash License):
@@ -16,35 +15,31 @@ export function Hero() {
         <div className="hero__content">
           <p className="eyebrow">Hi, I'm Kate</p>
           <h1 id="hero-heading" className="hero__title">
-            Web Developer
+            Software Developer
           </h1>
           <p className="hero__text">
             I build modern, responsive websites and web applications with JavaScript,
             TypeScript and React.
           </p>
           <div className="hero__actions">
-            {/* Link to Projects when there are some, otherwise to GitHub */}
-            {projects.length > 0 ? (
-              <a href="#projects" className="button button--primary">
-                View my projects
+            {contact.email && (
+              <a href={`mailto:${contact.email}`} className="button button--primary">
+                Email me
               </a>
-            ) : (
-              contact.github && (
-                <a
-                  href={contact.github}
-                  className="button button--primary"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  View my GitHub
-                  <span className="visually-hidden"> (opens in a new tab)</span>
-                </a>
-              )
             )}
-            <a href="#contact" className="button button--secondary">
-              Get in touch
-            </a>
+            {contact.linkedin && (
+              <a
+                href={contact.linkedin}
+                className="button button--secondary"
+                target="_blank"
+                rel="noreferrer"
+              >
+                LinkedIn
+                <span className="visually-hidden"> (opens in a new tab)</span>
+              </a>
+            )}
           </div>
+          <p className="hero__status">Open to new website projects</p>
         </div>
 
         <figure className="hero__media">

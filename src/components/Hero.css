@@ -36,10 +36,33 @@
   margin-top: 2.25rem;
 }
 
+.hero__status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1.75rem;
+  padding: 0.375rem 0.875rem 0.375rem 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-green);
+  background: var(--color-green-tint);
+  border-radius: 999px;
+}
+
+/* Small green dot with a soft pulse ring */
+.hero__status::before {
+  content: '';
+  width: 0.5rem;
+  height: 0.5rem;
+  background: var(--color-green-dot);
+  border-radius: 50%;
+  box-shadow: 0 0 0 3px rgb(79 138 104 / 0.2);
+}
+
 .hero__media {
   overflow: hidden;
   aspect-ratio: 16 / 10;
-  background: var(--color-accent-soft); /* shows while the photo loads */
+  background: var(--color-brown-tint); /* shows while the photo loads */
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-photo);
   animation: fade-in 0.5s 0.1s ease both;
