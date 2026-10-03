@@ -33,9 +33,7 @@ export function Header() {
     <header className={`site-header ${scrolled ? 'site-header--scrolled' : ''}`}>
       <div className="container site-header__inner">
         <a href="#home" className="site-header__logo">
-          <span className="site-header__mark">U</span>
-          <span className="site-header__dot">.</span>
-          <span className="site-header__name">Kate</span>
+          U<span className="site-header__accent">.K</span>ate
         </a>
 
         <nav
