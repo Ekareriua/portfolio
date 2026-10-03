@@ -63,7 +63,7 @@
 }
 
 html {
-  scroll-behavior: smooth;
+  /* Smooth scrolling for menu links is handled by src/hooks/useSmoothScroll.ts */
   scroll-padding-top: var(--header-height);
 }
 
@@ -119,6 +119,11 @@ a {
   outline: 2px solid var(--color-focus);
   outline-offset: 3px;
   border-radius: 4px;
+}
+
+/* Sections receive focus after a menu click (for keyboard users) — no outline needed */
+[tabindex='-1']:focus {
+  outline: none;
 }
 
 ::selection {
@@ -290,10 +295,6 @@ a {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-
   *,
   *::before,
   *::after {

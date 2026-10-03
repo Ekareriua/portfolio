@@ -19,7 +19,12 @@ export function Hero() {
               I build modern, responsive websites and web applications with JavaScript,
               TypeScript and React.
             </p>
-            <p className="hero__status">Open to new website projects</p>
+            <div className="hero__actions">
+              <a href="#contact" className="button button--primary">
+                Contact me
+              </a>
+              <p className="hero__status">Open to new website projects</p>
+            </div>
           </div>
 
           <HeroGallery sectionRef={sectionRef} />
