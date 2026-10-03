@@ -27,6 +27,5 @@
 }
 
 .site-footer__links a:hover {
-  color: var(--color-accent);
   text-decoration: underline;
 }

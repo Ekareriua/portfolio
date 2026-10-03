@@ -2,65 +2,69 @@
    Design tokens — change colours, fonts and spacing here
    ========================================================= */
 
-/* Colours — dark theme with an orange accent */
+/* Light, airy theme: soft grey-white background, charcoal text, dark buttons */
 :root {
-  --font-display: 'Space Grotesk', system-ui, sans-serif;
+  --font-display: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
   --font-body: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
-  --font-mono: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
 
-  --color-bg: #121214;
-  --color-surface: #1b1b1f;
-  --color-surface-2: #26262b;
-  --color-text: #efede8;
-  --color-text-muted: #a9a9b2;
-  --color-border: #2e2e34;
-  --color-border-strong: #5c5c66;
-  --color-accent: #ff8a5c;
-  --color-accent-soft: #24191a;
-  --color-header: rgb(18 18 20 / 0.85);
+  --color-bg: #eef0f3;
+  --color-surface: #ffffff;
+  --color-surface-2: #f3f4f6;
+  --color-text: #1b1d21;
+  --color-text-muted: #4b5058;
+  --color-border: #dfe2e7;
+  --color-border-strong: #b9bec6;
+  --color-accent: #1b1d21;
+  --color-accent-soft: #e7eaee;
+  --color-header: rgb(246 247 249 / 0.85);
+  --color-focus: #2563eb;
 
-  --color-label: #ff8a5c;
+  /* Soft light from the top-left, fading into pale grey */
+  --page-background:
+    radial-gradient(ellipse 80% 60% at 20% 0%, #ffffff 0%, transparent 70%),
+    linear-gradient(180deg, #f6f7f9 0%, #eceef1 100%);
 
-  --color-button-bg: #efede8;
-  --color-button-text: #121214;
-  --color-button-hover-bg: #ff8a5c;
-  --color-button-hover-text: #121214;
-  --color-button-alt: #efede8;
-  --color-button-alt-hover-text: #121214;
+  /* Small uppercase labels ("Hi, I'm Kate", section labels) */
+  --color-label: #5b616a;
 
-  --color-nav-hover-text: #efede8;
-  --color-nav-hover-bg: #26262b;
+  --color-button-bg: #1b1d21;
+  --color-button-text: #ffffff;
+  --color-button-hover-bg: #000000;
+  --color-button-hover-text: #ffffff;
+  --color-button-alt-bg: #ffffff;
+  --color-button-alt-text: #1b1d21;
+  --color-button-alt-border: #d3d7dd;
+  --color-button-alt-hover-bg: #f3f4f6;
 
-  --color-chip-text: #efede8;
-  --color-chip-bg: #26262b;
-  --color-chip-border: #2e2e34;
+  --color-nav-hover-text: #1b1d21;
+  --color-nav-hover-bg: rgb(27 29 33 / 0.06);
 
-  --color-media-bg: #26262b;
-  --color-media-line: #2e2e34;
-  --color-media-label: #a9a9b2;
-  --color-media-label-border: #5c5c66;
+  --color-chip-text: #1b1d21;
+  --color-chip-bg: #f0f2f5;
+  --color-chip-border: #e3e6ea;
 
-  --color-status-wip: #ffc96b;
-  --color-status-wip-bg: #3a2c12;
-  --color-status-done: #7fdc9c;
-  --color-status-done-bg: #15301f;
+  --color-media-bg: #f0f2f5;
+  --color-media-line: #e3e6ea;
+  --color-media-label: #4b5058;
+  --color-media-label-border: #b9bec6;
 
-  --color-code-bg: #1f1f24;
-  --color-code-text: #e7e5e0;
-  --color-code-keyword: #ff9b73;
-  --color-code-string: #a8d8a0;
+  --color-status-wip: #7a5200;
+  --color-status-wip-bg: #fbefd2;
+  --color-status-done: #1d6b3a;
+  --color-status-done-bg: #dcf1e3;
 
-  --shadow-md: 0 8px 24px -12px rgb(0 0 0 / 0.6);
-  --shadow-lg: 0 24px 48px -24px rgb(0 0 0 / 0.8);
+  --shadow-sm: 0 1px 2px rgb(16 24 40 / 0.06);
+  --shadow-md: 0 12px 28px -14px rgb(16 24 40 / 0.18);
+  --shadow-lg: 0 28px 56px -24px rgb(16 24 40 / 0.35);
 
   --radius-sm: 8px;
-  --radius-lg: 18px;
+  --radius-lg: 14px;
 
   --gutter: 1.5rem;
   --header-height: 4.5rem;
-  --space-section: clamp(5rem, 12vw, 9rem);
+  --space-section: clamp(5rem, 11vw, 8rem);
 
-  color-scheme: dark;
+  color-scheme: light;
 }
 
 @media (min-width: 48rem) {
@@ -95,14 +99,25 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+/* The page gradient sits on a fixed layer behind everything,
+   so it stays in place while scrolling */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: var(--page-background);
+  pointer-events: none;
+}
+
 h1,
 h2,
 h3 {
   margin: 0;
   font-family: var(--font-display);
-  font-weight: 600;
+  font-weight: 700;
   line-height: 1.1;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.025em;
 }
 
 p {
@@ -119,14 +134,14 @@ a {
 }
 
 :focus-visible {
-  outline: 3px solid var(--color-accent);
+  outline: 3px solid var(--color-focus);
   outline-offset: 3px;
   border-radius: 2px;
 }
 
 ::selection {
-  background: var(--color-accent);
-  color: var(--color-bg);
+  background: #1b1d21;
+  color: #ffffff;
 }
 
 /* =========================================================
@@ -159,24 +174,24 @@ a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 3rem;
-  padding: 0.75rem 1.5rem;
-  font-weight: 600;
-  font-size: 1rem;
+  min-height: 2.875rem;
+  padding: 0.75rem 1.375rem;
+  font-weight: 500;
+  font-size: 0.9375rem;
   text-decoration: none;
-  border: 2px solid transparent;
-  border-radius: 999px;
-  transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
 }
 
 .button:hover {
-  transform: translateY(-2px);
+  transform: translateY(-1px);
 }
 
 .button--primary {
   background: var(--color-button-bg);
   color: var(--color-button-text);
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-sm);
 }
 
 .button--primary:hover {
@@ -185,14 +200,14 @@ a {
 }
 
 .button--secondary {
-  color: var(--color-button-alt);
-  border-color: currentColor;
+  background: var(--color-button-alt-bg);
+  color: var(--color-button-alt-text);
+  border-color: var(--color-button-alt-border);
+  box-shadow: var(--shadow-sm);
 }
 
 .button--secondary:hover {
-  background: var(--color-button-alt);
-  border-color: var(--color-button-alt);
-  color: var(--color-button-alt-hover-text);
+  background: var(--color-button-alt-hover-bg);
 }
 
 .tag-list {
@@ -206,8 +221,8 @@ a {
 
 .tag {
   padding: 0.25rem 0.625rem;
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
+  font-size: 0.8125rem;
+  font-weight: 500;
   color: var(--color-chip-text);
   background: var(--color-chip-bg);
   border-radius: var(--radius-sm);
@@ -217,12 +232,12 @@ a {
   font-weight: 600;
   color: var(--color-text);
   text-decoration: underline;
-  text-decoration-color: var(--color-accent);
+  text-decoration-color: var(--color-border-strong);
   text-underline-offset: 0.25em;
 }
 
 .text-link:hover {
-  color: var(--color-accent);
+  text-decoration-color: currentColor;
 }
 
 /* =========================================================

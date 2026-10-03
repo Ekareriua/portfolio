@@ -21,7 +21,7 @@ export function Header() {
     <header className="site-header">
       <div className="container site-header__inner">
         <a href="#home" className="site-header__logo">
-          Kate<span aria-hidden="true">.</span>
+          Kate
         </a>
 
         <nav
