@@ -1,0 +1,158 @@
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--color-header);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.site-header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  height: var(--header-height);
+}
+
+.site-header__logo {
+  font-family: var(--font-mono);
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.site-header__logo span {
+  color: var(--color-accent);
+}
+
+/* ---------- Mobile menu button ---------- */
+
+.menu-toggle {
+  display: grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  margin-right: -0.5rem;
+  background: none;
+  border: none;
+  border-radius: var(--radius-sm);
+  color: var(--color-text);
+  cursor: pointer;
+}
+
+/* Three-line "hamburger" icon drawn with CSS */
+.menu-toggle__icon,
+.menu-toggle__icon::before,
+.menu-toggle__icon::after {
+  display: block;
+  width: 1.25rem;
+  height: 2px;
+  background: currentColor;
+  border-radius: 2px;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.menu-toggle__icon {
+  position: relative;
+}
+
+.menu-toggle__icon::before,
+.menu-toggle__icon::after {
+  content: '';
+  position: absolute;
+  left: 0;
+}
+
+.menu-toggle__icon::before {
+  top: -6px;
+}
+
+.menu-toggle__icon::after {
+  top: 6px;
+}
+
+/* Turn the icon into an "X" when open */
+.menu-toggle[aria-expanded='true'] .menu-toggle__icon {
+  background: transparent;
+}
+
+.menu-toggle[aria-expanded='true'] .menu-toggle__icon::before {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.menu-toggle[aria-expanded='true'] .menu-toggle__icon::after {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+/* ---------- Navigation (mobile first) ---------- */
+
+.site-nav {
+  display: none;
+  position: absolute;
+  top: var(--header-height);
+  left: 0;
+  right: 0;
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  box-shadow: var(--shadow-md);
+}
+
+.site-nav--open {
+  display: block;
+}
+
+.site-nav__list {
+  list-style: none;
+  margin: 0;
+  padding: 0.5rem var(--gutter) 1rem;
+}
+
+.site-nav__link {
+  display: block;
+  padding: 0.75rem 0;
+  font-weight: 500;
+  font-size: 1.125rem;
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.site-nav__link:hover {
+  color: var(--color-accent);
+}
+
+/* ---------- Desktop ---------- */
+
+@media (min-width: 48rem) {
+  .menu-toggle {
+    display: none;
+  }
+
+  .site-nav {
+    display: block;
+    position: static;
+    margin-left: auto;
+    background: none;
+    border: none;
+  }
+
+  .site-nav__list {
+    display: flex;
+    gap: 0.25rem;
+    padding: 0;
+  }
+
+  .site-nav__link {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.9375rem;
+    border-radius: var(--radius-sm);
+    color: var(--color-text-muted);
+  }
+
+  .site-nav__link:hover {
+    color: var(--color-nav-hover-text);
+    background: var(--color-nav-hover-bg);
+  }
+}

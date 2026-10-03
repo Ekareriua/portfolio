@@ -1,0 +1,292 @@
+/* =========================================================
+   Design tokens — change colours, fonts and spacing here
+   ========================================================= */
+
+/* Colours — dark theme with an orange accent */
+:root {
+  --font-display: 'Space Grotesk', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+
+  --color-bg: #121214;
+  --color-surface: #1b1b1f;
+  --color-surface-2: #26262b;
+  --color-text: #efede8;
+  --color-text-muted: #a9a9b2;
+  --color-border: #2e2e34;
+  --color-border-strong: #5c5c66;
+  --color-accent: #ff8a5c;
+  --color-accent-soft: #24191a;
+  --color-header: rgb(18 18 20 / 0.85);
+
+  --color-label: #ff8a5c;
+
+  --color-button-bg: #efede8;
+  --color-button-text: #121214;
+  --color-button-hover-bg: #ff8a5c;
+  --color-button-hover-text: #121214;
+  --color-button-alt: #efede8;
+  --color-button-alt-hover-text: #121214;
+
+  --color-nav-hover-text: #efede8;
+  --color-nav-hover-bg: #26262b;
+
+  --color-chip-text: #efede8;
+  --color-chip-bg: #26262b;
+  --color-chip-border: #2e2e34;
+  --color-chip-learning-text: #efede8;
+  --color-chip-learning-border: #5c5c66;
+
+  --color-media-bg: #26262b;
+  --color-media-line: #2e2e34;
+  --color-media-label: #a9a9b2;
+  --color-media-label-border: #5c5c66;
+
+  --color-status-wip: #ffc96b;
+  --color-status-wip-bg: #3a2c12;
+  --color-status-done: #7fdc9c;
+  --color-status-done-bg: #15301f;
+
+  --color-code-bg: #1f1f24;
+  --color-code-text: #e7e5e0;
+  --color-code-keyword: #ff9b73;
+  --color-code-string: #a8d8a0;
+
+  --shadow-md: 0 8px 24px -12px rgb(0 0 0 / 0.6);
+  --shadow-lg: 0 24px 48px -24px rgb(0 0 0 / 0.8);
+
+  --radius-sm: 8px;
+  --radius-lg: 18px;
+
+  --gutter: 1.5rem;
+  --header-height: 4.5rem;
+  --space-section: clamp(5rem, 12vw, 9rem);
+
+  color-scheme: dark;
+}
+
+@media (min-width: 48rem) {
+  :root {
+    --gutter: 2.5rem;
+  }
+}
+
+/* =========================================================
+   Base styles
+   ========================================================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  /* Keeps section headings visible below the sticky header */
+  scroll-padding-top: var(--header-height);
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--color-text);
+  background: var(--color-bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+p {
+  margin: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: var(--color-accent);
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+::selection {
+  background: var(--color-accent);
+  color: var(--color-bg);
+}
+
+/* =========================================================
+   Layout helpers
+   ========================================================= */
+
+.container {
+  width: 100%;
+  max-width: 74rem;
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.card-grid {
+  display: grid;
+  gap: 2rem;
+}
+
+@media (min-width: 48rem) {
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* =========================================================
+   Reusable UI pieces
+   ========================================================= */
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3rem;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  border: 2px solid transparent;
+  border-radius: 999px;
+  transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+}
+
+.button--primary {
+  background: var(--color-button-bg);
+  color: var(--color-button-text);
+  box-shadow: var(--shadow-md);
+}
+
+.button--primary:hover {
+  background: var(--color-button-hover-bg);
+  color: var(--color-button-hover-text);
+}
+
+.button--secondary {
+  color: var(--color-button-alt);
+  border-color: currentColor;
+}
+
+.button--secondary:hover {
+  background: var(--color-button-alt);
+  border-color: var(--color-button-alt);
+  color: var(--color-button-alt-hover-text);
+}
+
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.tag {
+  padding: 0.25rem 0.625rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--color-chip-text);
+  background: var(--color-chip-bg);
+  border-radius: var(--radius-sm);
+}
+
+.text-link {
+  font-weight: 600;
+  color: var(--color-text);
+  text-decoration: underline;
+  text-decoration-color: var(--color-accent);
+  text-underline-offset: 0.25em;
+}
+
+.text-link:hover {
+  color: var(--color-accent);
+}
+
+/* =========================================================
+   Accessibility helpers
+   ========================================================= */
+
+/* Hidden visually but still read by screen readers */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.skip-link {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  z-index: 100;
+  padding: 0.75rem 1rem;
+  background: var(--color-text);
+  color: var(--color-bg);
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+  transform: translateY(-200%);
+}
+
+.skip-link:focus {
+  transform: none;
+}
+
+/* =========================================================
+   Animation
+   ========================================================= */
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Respect visitors who prefer less motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-delay: 0ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
