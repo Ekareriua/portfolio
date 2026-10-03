@@ -34,7 +34,8 @@ export function Header() {
       <div className="container site-header__inner">
         <a href="#home" className="site-header__logo">
           <span className="site-header__mark">U</span>
-          <span className="site-header__dot">.</span>Kate
+          <span className="site-header__dot">.</span>
+          <span className="site-header__name">Kate</span>
         </a>
 
         <nav

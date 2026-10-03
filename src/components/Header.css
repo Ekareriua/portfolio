@@ -32,15 +32,21 @@
   text-decoration: none;
 }
 
-/* "U" stands out in brown, slightly larger than "Kate" */
+/* Black "U", slightly larger, followed by "Kate" in brown */
 .site-header__mark {
-  font-size: 1.3125rem;
+  font-size: 1.375rem;
   font-weight: 800;
+  line-height: 1;
+  color: var(--color-ink);
+}
+
+.site-header__name {
+  font-weight: 600;
   color: var(--color-brown);
 }
 
 .site-header__dot {
-  color: var(--color-brown-soft);
+  color: var(--color-brown);
 }
 
 /* ---------- Mobile menu button ---------- */
