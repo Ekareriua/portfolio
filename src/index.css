@@ -4,7 +4,7 @@
 
 :root {
   --font: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
-  --font-display: 'Fraunces', Georgia, serif; /* the big "Software Developer" headline */
+  --font-display: 'Space Grotesk', 'Inter', sans-serif; /* the big "Software Developer" headline */
 
   /* Palette: ink blue, white, soft brown and forest green (from the hero photo) */
   --color-ink: #1d2b3a; /* headings, text and the main button */

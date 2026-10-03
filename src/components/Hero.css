@@ -19,9 +19,8 @@
   font-family: var(--font-display);
   font-size: clamp(2.75rem, 5.6vw, 4.25rem);
   font-weight: 600;
-  font-optical-sizing: auto;
   line-height: 1.02;
-  letter-spacing: -0.025em;
+  letter-spacing: -0.03em;
 }
 
 .hero__text {
