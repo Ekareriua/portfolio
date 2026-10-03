@@ -105,10 +105,10 @@ export const heroPhotos: { left: HeroPhoto[]; right: HeroPhoto[] } = {
       description: 'Featured products for a calmer home.',
     },
     {
-      src: 'hero/workout-video-phone.webp',
-      ratio: 0.799,
-      title: 'Workout videos',
-      description: 'Follow-along exercises with short clips.',
+      src: 'hero/cafe-laptop.webp',
+      ratio: 1.045,
+      title: 'Café website',
+      description: 'A cosy interior, menu highlights and a table booking button.',
     },
     {
       src: 'hero/business-laptop.webp',
