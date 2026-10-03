@@ -1,16 +1,14 @@
-.site-footer {
-  padding-block: 2rem;
-  border-top: 1px solid var(--color-border);
-  font-size: 0.9375rem;
-  color: var(--color-text-muted);
-}
-
 .site-footer__inner {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
+  padding-block: 2rem;
+  font-size: 0.875rem;
+  color: var(--color-text-3);
+  /* Hairline at the top, matching the sections */
+  background: linear-gradient(var(--color-line), var(--color-line)) center top / calc(100% - var(--gutter) * 2) 1px no-repeat;
 }
 
 .site-footer__links {
@@ -28,4 +26,5 @@
 
 .site-footer__links a:hover {
   text-decoration: underline;
+  text-underline-offset: 0.25em;
 }

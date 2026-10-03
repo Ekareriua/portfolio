@@ -1,27 +1,29 @@
 .section {
-  padding-block: var(--space-section);
+  padding-bottom: var(--section-space);
 }
 
-.section__header {
-  max-width: 40rem;
-  margin-bottom: clamp(2rem, 4vw, 2.75rem);
-}
-
-.section__label {
-  font-size: 0.8125rem;
-  font-weight: 500;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--color-label);
-  margin-bottom: 1rem;
+/* A hairline divides each section; heading left, content right on desktop */
+.section__inner {
+  display: grid;
+  gap: 2rem;
+  padding-top: var(--section-space);
+  background: linear-gradient(var(--color-line), var(--color-line)) center top / calc(100% - var(--gutter) * 2) 1px no-repeat;
 }
 
 .section__title {
-  font-size: clamp(2rem, 5vw, 2.75rem);
+  margin-top: 0.75rem;
+  font-size: clamp(2rem, 4vw, 2.5rem);
 }
 
 .section__intro {
-  margin-top: 1.25rem;
-  color: var(--color-text-muted);
-  font-size: 1.0625rem;
+  margin-top: 1rem;
+  max-width: 24rem;
+  color: var(--color-text-2);
+}
+
+@media (min-width: 60rem) {
+  .section__inner {
+    grid-template-columns: 1fr 2fr;
+    gap: 4rem;
+  }
 }

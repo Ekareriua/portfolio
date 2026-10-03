@@ -2,64 +2,34 @@
    Design tokens — change colours, fonts and spacing here
    ========================================================= */
 
-/* Light, airy theme: soft grey-white background, charcoal text, dark buttons */
 :root {
-  --font-display: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
-  --font-body: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
 
-  --color-bg: #eef0f3;
+  /* Colours */
+  --color-text: #16181d;
+  --color-text-2: #464b53; /* paragraphs */
+  --color-text-3: #6a6f78; /* small labels */
+  --color-line: #e0e2e6; /* hairlines and borders */
+  --color-line-strong: #c9ccd2;
   --color-surface: #ffffff;
-  --color-surface-2: #f3f4f6;
-  --color-text: #1f2328;
-  --color-text-muted: #41464d;
-  --color-border: #dfe2e7;
-  --color-border-strong: #b9bec6;
-  --color-accent: #1b1d21;
-  --color-accent-soft: #e7eaee;
-  --color-header: rgb(246 247 249 / 0.85);
+  --color-surface-2: #f6f7f8;
+  --color-dark: #1c1f24; /* main button */
+  --color-dark-hover: #34383f;
   --color-focus: #2563eb;
 
-  /* Soft light from the top-left, fading into pale grey */
-  --page-background:
-    radial-gradient(ellipse 80% 60% at 20% 0%, #ffffff 0%, transparent 70%),
-    linear-gradient(180deg, #f6f7f9 0%, #eceef1 100%);
+  /* Soft light from the top-left fading into pale grey */
+  --page-background: linear-gradient(160deg, #fcfcfd 0%, #f2f3f5 45%, #e9ebee 100%);
 
-  /* Small uppercase labels ("Hi, I'm Kate", section labels) */
-  --color-label: #5b616a;
-
-  --color-button-bg: #1f2328;
-  --color-button-text: #ffffff;
-  --color-button-hover-bg: #33383f;
-  --color-button-hover-text: #ffffff;
-  --color-button-alt-bg: #f6f7f9;
-  --color-button-alt-text: #1f2328;
-  --color-button-alt-border: #d4d7dc;
-  --color-button-alt-hover-bg: #ffffff;
-
-  --color-chip-text: #1b1d21;
-  --color-chip-bg: #f0f2f5;
-  --color-chip-border: #e3e6ea;
-
-  --color-media-bg: #f0f2f5;
-  --color-media-line: #e3e6ea;
-  --color-media-label: #4b5058;
-  --color-media-label-border: #b9bec6;
-
-  --color-status-wip: #7a5200;
-  --color-status-wip-bg: #fbefd2;
-  --color-status-done: #1d6b3a;
-  --color-status-done-bg: #dcf1e3;
-
-  --shadow-sm: 0 1px 2px rgb(16 24 40 / 0.06);
-  --shadow-md: 0 12px 28px -14px rgb(16 24 40 / 0.18);
-  --shadow-lg: 0 28px 56px -24px rgb(16 24 40 / 0.35);
-
+  /* Shape and spacing */
   --radius-sm: 6px;
-  --radius-lg: 12px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --shadow-photo: 0 1px 2px rgb(16 24 40 / 0.05), 0 24px 48px -24px rgb(16 24 40 / 0.35);
 
+  --container: 70rem;
   --gutter: 1.5rem;
   --header-height: 4.5rem;
-  --space-section: clamp(4rem, 8vw, 6rem);
+  --section-space: clamp(4rem, 9vw, 6.5rem);
 
   color-scheme: light;
 }
@@ -71,7 +41,7 @@
 }
 
 /* =========================================================
-   Base styles
+   Base
    ========================================================= */
 
 *,
@@ -82,22 +52,22 @@
 
 html {
   scroll-behavior: smooth;
-  /* Keeps section headings visible below the sticky header */
   scroll-padding-top: var(--header-height);
 }
 
 body {
   margin: 0;
-  font-family: var(--font-body);
+  min-height: 100vh;
+  font-family: var(--font);
   font-size: 1rem;
-  line-height: 1.7;
+  line-height: 1.6;
   color: var(--color-text);
-  background: var(--color-bg);
+  background: #f2f3f5;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* The page gradient sits on a fixed layer behind everything,
-   so it stays in place while scrolling */
+/* The gradient sits on a fixed layer so it stays put while scrolling */
 body::before {
   content: '';
   position: fixed;
@@ -109,103 +79,101 @@ body::before {
 
 h1,
 h2,
-h3 {
+h3,
+p,
+figure {
   margin: 0;
-  font-family: var(--font-display);
+}
+
+h1,
+h2,
+h3 {
   font-weight: 700;
   line-height: 1.1;
   letter-spacing: -0.025em;
 }
 
-p {
-  margin: 0;
-}
-
 img {
   display: block;
   max-width: 100%;
+  height: auto;
 }
 
 a {
-  color: var(--color-accent);
+  color: inherit;
 }
 
 :focus-visible {
-  outline: 3px solid var(--color-focus);
+  outline: 2px solid var(--color-focus);
   outline-offset: 3px;
-  border-radius: 2px;
+  border-radius: 4px;
 }
 
 ::selection {
-  background: #1b1d21;
-  color: #ffffff;
+  background: var(--color-dark);
+  color: #fff;
 }
 
 /* =========================================================
-   Layout helpers
+   Layout
    ========================================================= */
 
 .container {
   width: 100%;
-  max-width: 74rem;
+  max-width: calc(var(--container) + var(--gutter) * 2);
   margin-inline: auto;
   padding-inline: var(--gutter);
 }
 
-.card-grid {
-  display: grid;
-  gap: 2rem;
-}
-
-@media (min-width: 48rem) {
-  .card-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
 /* =========================================================
-   Reusable UI pieces
+   Reusable pieces
    ========================================================= */
+
+/* Small uppercase label above headings */
+.eyebrow {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-text-3);
+}
 
 .button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 2.75rem;
-  padding: 0.6875rem 1.5rem;
-  font-weight: 500;
+  height: 2.875rem;
+  padding: 0 1.5rem;
+  font: inherit;
   font-size: 0.9375rem;
+  font-weight: 500;
   text-decoration: none;
   border: 1px solid transparent;
   border-radius: var(--radius-sm);
-  transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
-}
-
-.button:hover {
-  transform: translateY(-1px);
+  cursor: pointer;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
 }
 
 .button--primary {
-  background: var(--color-button-bg);
-  color: var(--color-button-text);
-  box-shadow: var(--shadow-sm);
+  color: #fff;
+  background: var(--color-dark);
 }
 
 .button--primary:hover {
-  background: var(--color-button-hover-bg);
-  color: var(--color-button-hover-text);
+  background: var(--color-dark-hover);
 }
 
 .button--secondary {
-  background: var(--color-button-alt-bg);
-  color: var(--color-button-alt-text);
-  border-color: var(--color-button-alt-border);
+  color: var(--color-text);
+  background: var(--color-surface-2);
+  border-color: var(--color-line-strong);
 }
 
 .button--secondary:hover {
-  background: var(--color-button-alt-hover-bg);
+  background: var(--color-surface);
 }
 
+/* Rounded labels for technologies and skills */
 .tag-list {
   display: flex;
   flex-wrap: wrap;
@@ -216,20 +184,22 @@ a {
 }
 
 .tag {
-  padding: 0.25rem 0.625rem;
-  font-size: 0.8125rem;
+  padding: 0.3125rem 0.8125rem;
+  font-size: 0.875rem;
   font-weight: 500;
-  color: var(--color-chip-text);
-  background: var(--color-chip-bg);
-  border-radius: var(--radius-sm);
+  color: var(--color-text);
+  background: var(--color-surface);
+  border: 1px solid var(--color-line);
+  border-radius: 999px;
 }
 
 .text-link {
-  font-weight: 600;
+  font-weight: 500;
   color: var(--color-text);
   text-decoration: underline;
-  text-decoration-color: var(--color-border-strong);
+  text-decoration-color: var(--color-line-strong);
   text-underline-offset: 0.25em;
+  transition: text-decoration-color 0.15s ease;
 }
 
 .text-link:hover {
@@ -255,13 +225,13 @@ a {
 
 .skip-link {
   position: absolute;
-  top: 0.5rem;
-  left: 0.5rem;
+  top: 0.75rem;
+  left: 0.75rem;
   z-index: 100;
   padding: 0.75rem 1rem;
-  background: var(--color-text);
-  color: var(--color-bg);
-  font-weight: 600;
+  font-weight: 500;
+  color: #fff;
+  background: var(--color-dark);
   border-radius: var(--radius-sm);
   transform: translateY(-200%);
 }
@@ -271,13 +241,13 @@ a {
 }
 
 /* =========================================================
-   Animation
+   Motion
    ========================================================= */
 
-@keyframes fade-up {
+@keyframes fade-in {
   from {
     opacity: 0;
-    transform: translateY(12px);
+    transform: translateY(8px);
   }
   to {
     opacity: 1;
@@ -285,7 +255,6 @@ a {
   }
 }
 
-/* Respect visitors who prefer less motion */
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;

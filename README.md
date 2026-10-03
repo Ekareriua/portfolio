@@ -41,3 +41,9 @@ src/
 - **Add a new section:** create a component using `<Section>`, add it to `App.tsx`,
   and add its id to `src/data/navigation.ts`.
 - **Change colours:** edit the variables at the top of `src/index.css`.
+
+## Credits
+
+Hero photo by [Nathan Dumlao](https://unsplash.com/@nate_dumlao) on
+[Unsplash](https://unsplash.com/photos/q3YZ4g7j9yc) (Unsplash License). To use your own
+photo, see the comment at the top of `src/components/Hero.tsx`.

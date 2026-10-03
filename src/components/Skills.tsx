@@ -10,20 +10,20 @@ export function Skills() {
       title="Skills"
       intro={<p>The languages, frameworks and tools I work with.</p>}
     >
-      <div className="skills-grid">
+      <ul className="skill-groups">
         {skillGroups.map((group) => (
-          <div key={group.title} className="skill-group">
+          <li key={group.title} className="skill-group">
             <h3 className="skill-group__title">{group.title}</h3>
-            <ul className="skill-group__list">
+            <ul className="tag-list">
               {group.skills.map((skill) => (
-                <li key={skill} className="skill">
+                <li key={skill} className="tag">
                   {skill}
                 </li>
               ))}
             </ul>
-          </div>
+          </li>
         ))}
-      </div>
+      </ul>
     </Section>
   )
 }

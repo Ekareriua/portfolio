@@ -4,6 +4,18 @@ import './Header.css'
 
 export function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
+
+  // Give the header a background once the page is scrolled
+  useEffect(() => {
+    function handleScroll() {
+      setScrolled(window.scrollY > 8)
+    }
+
+    handleScroll()
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   // Close the mobile menu when the Escape key is pressed
   useEffect(() => {
@@ -18,7 +30,7 @@ export function Header() {
   }, [menuOpen])
 
   return (
-    <header className="site-header">
+    <header className={`site-header ${scrolled ? 'site-header--scrolled' : ''}`}>
       <div className="container site-header__inner">
         <a href="#home" className="site-header__logo">
           Kate
