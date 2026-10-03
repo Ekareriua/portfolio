@@ -1,21 +1,39 @@
-// Photos for the moving hero gallery, from Unsplash (free to use under the Unsplash License).
-// Each `id` is the part of an images.unsplash.com link that starts with "photo-".
-// Each column has its own photos, so the same photo never appears side by side.
-export const heroPhotos = {
+// Mockups shown in the moving hero gallery. The images live in /public/hero.
+// `ratio` is each image's shape (width / height): 0.8 is the tallest (4:5), bigger = shorter.
+// Each column has its own images, so the same one never appears side by side.
+
+export type HeroPhoto = {
+  src: string
+  ratio: number
+}
+
+export const heroPhotos: { left: HeroPhoto[]; right: HeroPhoto[] } = {
   left: [
-    'photo-1600298882525-1ac025c98b68', // snowy peak and lake — Nathan Dumlao
-    'photo-1784655597870-ac76256865a9', // misty morning lake
-    'photo-1566463486676-00a757b3960b', // turquoise lake in the forest
-    'photo-1610825599208-f22ef6ae91e9', // alpine lake valley
-    'photo-1788697599493-98465a126216', // wide blue lake and mountains
-    'photo-1779988563252-2036520e80a8', // pine above a lake
+    { src: 'hero/booking-laptop.webp', ratio: 1.457 },
+    { src: 'hero/tasks-phone.webp', ratio: 0.857 },
+    { src: 'hero/timer-tablet.webp', ratio: 1.621 },
+    { src: 'hero/adventure-game-phone.webp', ratio: 0.803 },
+    { src: 'hero/restaurant-laptop.webp', ratio: 1.868 },
+    { src: 'hero/calories-phone.webp', ratio: 0.799 },
+    { src: 'hero/portfolio-mountains-laptop.webp', ratio: 0.958 },
+    { src: 'hero/reading-tablet.webp', ratio: 0.799 },
+    { src: 'hero/nature-charity-laptop.webp', ratio: 1.871 },
+    { src: 'hero/workout-list-phone.webp', ratio: 0.799 },
+    { src: 'hero/ceramics-shop-laptop.webp', ratio: 0.799 },
+    { src: 'hero/language-phone.webp', ratio: 0.799 },
   ],
   right: [
-    'photo-1600298882283-40b4dcb8b211', // mountain lake reflection
-    'photo-1769770646474-4aaba3284afd', // clear turquoise water
-    'photo-1763608342562-adeb23f2e12a', // lake between pine-covered slopes
-    'photo-1783356455645-57320eabc89d', // lake behind tall pines
-    'photo-1780515851953-5e595ff311c9', // green valley with a lake
-    'photo-1779988563101-d264f3abeb66', // misty mountain bowl and forest
+    { src: 'hero/explore-phones.webp', ratio: 1.332 },
+    { src: 'hero/dark-timer-tablet.webp', ratio: 0.8 },
+    { src: 'hero/home-shop-laptop.webp', ratio: 1.452 },
+    { src: 'hero/workout-video-phone.webp', ratio: 0.799 },
+    { src: 'hero/business-laptop.webp', ratio: 1.876 },
+    { src: 'hero/castle-game-phone.webp', ratio: 0.799 },
+    { src: 'hero/portfolio-kate-laptop.webp', ratio: 0.834 },
+    { src: 'hero/wave-dashboard-phone.webp', ratio: 0.8 },
+    { src: 'hero/plant-nature-laptop.webp', ratio: 0.955 },
+    { src: 'hero/calories-desk-phone.webp', ratio: 1.329 },
+    { src: 'hero/calendar-laptop.webp', ratio: 0.799 },
+    { src: 'hero/island-game-phone.webp', ratio: 0.799 },
   ],
 }

@@ -42,8 +42,8 @@ src/
   and add its id to `src/data/navigation.ts`.
 - **Change colours:** edit the variables at the top of `src/index.css`.
 
-## Credits
+## Hero images
 
-Hero photos are from [Unsplash](https://unsplash.com) (Unsplash License), including one by
-[Nathan Dumlao](https://unsplash.com/@nate_dumlao). The list lives in `src/data/heroPhotos.ts` —
-swap the IDs there to change the photos.
+The moving hero gallery shows app and website mockups from `public/hero`, listed in
+`src/data/heroPhotos.ts` (file + shape for each). To change them, add or swap images in
+`public/hero` and update that list.

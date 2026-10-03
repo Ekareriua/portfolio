@@ -1,21 +1,10 @@
 import { useEffect, useRef, type RefObject } from 'react'
-import { heroPhotos } from '../data/heroPhotos'
+import { heroPhotos, type HeroPhoto } from '../data/heroPhotos'
 import './HeroGallery.css'
-
-const photoUrl = (id: string) =>
-  `https://images.unsplash.com/${id}?w=600&q=75&auto=format&fit=crop`
 
 // How many pixels the photos move for each pixel you scroll.
 // Higher = faster; lower = calmer.
 const SPEED = 0.42
-
-// Each column is a long strip that repeats its photos, so plenty go by
-const PHOTOS_PER_COLUMN = 12
-
-// Photo shapes (width / height). 4 / 5 is the tallest; the rest are shorter.
-// Each column uses a different pattern so the two never line up into a grid.
-const leftShapes = [4 / 5, 1, 4 / 3, 4 / 5, 5 / 4, 1]
-const rightShapes = [1, 4 / 5, 5 / 4, 4 / 3, 4 / 5, 1]
 
 const clamp = (value: number) => Math.min(1, Math.max(0, value))
 
@@ -92,15 +81,12 @@ export function HeroGallery({ sectionRef }: HeroGalleryProps) {
     }
   }, [sectionRef])
 
-  const column = (photos: string[], shapes: number[], ref: RefObject<HTMLDivElement | null>) => (
+  // Each photo keeps its own shape, so the heights vary naturally
+  const column = (photos: HeroPhoto[], ref: RefObject<HTMLDivElement | null>) => (
     <div className="hero-gallery__column" ref={ref}>
-      {Array.from({ length: PHOTOS_PER_COLUMN }, (_, i) => (
-        <div
-          key={i}
-          className="hero-gallery__photo"
-          style={{ aspectRatio: shapes[i % shapes.length] }}
-        >
-          <img src={photoUrl(photos[i % photos.length])} alt="" />
+      {photos.map((photo) => (
+        <div key={photo.src} className="hero-gallery__photo" style={{ aspectRatio: photo.ratio }}>
+          <img src={`${import.meta.env.BASE_URL}${photo.src}`} alt="" />
         </div>
       ))}
     </div>
@@ -109,8 +95,8 @@ export function HeroGallery({ sectionRef }: HeroGalleryProps) {
   return (
     // Decorative scenery, so it's hidden from screen readers
     <div className="hero-gallery" ref={galleryRef} aria-hidden="true">
-      {column(heroPhotos.left, leftShapes, leftRef)}
-      {column(heroPhotos.right, rightShapes, rightRef)}
+      {column(heroPhotos.left, leftRef)}
+      {column(heroPhotos.right, rightRef)}
     </div>
   )
 }
