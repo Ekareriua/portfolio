@@ -36,8 +36,8 @@ export function PrivacyPage() {
         </p>
         <p>
           You can ask me to see or delete your information at any time:{' '}
-          <a href={`mailto:${contact.email}`}>{contact.email}</a>. If you're unhappy, you can
-          contact the{' '}
+          <a href={`mailto:${contact.email}`}>{contact.email}</a>. You also have the right to
+          complain to the{' '}
           <a href="https://ico.org.uk/make-a-complaint/" target="_blank" rel="noreferrer">
             ICO
           </a>
