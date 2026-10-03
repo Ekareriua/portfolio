@@ -3,19 +3,72 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kate — Software Developer</title>
+
+    <!-- Search engines: page title, description and the official address -->
+    <title>Kate Utina — Software Developer</title>
     <meta
       name="description"
-      content="Kate is a software developer building modern, responsive websites and web applications with JavaScript, TypeScript and React."
+      content="Kate Utina is a software developer building modern, responsive websites and web apps with JavaScript, TypeScript and React. Open to new website projects."
     />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="canonical" href="https://ukate.uk/" />
+    <meta name="author" content="Kate Utina" />
+    <meta name="theme-color" content="#f7f3ee" />
 
+    <!-- Icons -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+    <!-- Link previews on LinkedIn, WhatsApp, Slack, X, etc. -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="U.Kate" />
+    <meta property="og:url" content="https://ukate.uk/" />
+    <meta property="og:title" content="Kate Utina — Software Developer" />
+    <meta
+      property="og:description"
+      content="Modern, responsive websites and web apps with JavaScript, TypeScript and React."
+    />
+    <meta property="og:image" content="https://ukate.uk/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Kate Utina, Software Developer — app and website mockups" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Tells Google who this site is about -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Kate Utina",
+        "alternateName": "Ekaterina Utina",
+        "jobTitle": "Software Developer",
+        "url": "https://ukate.uk/",
+        "image": "https://ukate.uk/og-image.jpg",
+        "sameAs": ["https://www.linkedin.com/in/ekaterina-utina-bb0758250/"],
+        "knowsAbout": ["JavaScript", "TypeScript", "React", "Node.js", "Web development"]
+      }
+    </script>
+
+    <!-- Fonts load without blocking the first paint: text shows straight away in a
+         system font, then switches to Inter / Space Grotesk once they arrive -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
+      rel="preload"
+      as="style"
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600&display=swap"
-      rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600&display=swap"
+      media="print"
+      onload="this.media = 'all'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600&display=swap"
+      />
+    </noscript>
   </head>
   <body>
     <div id="root"></div>

@@ -8,6 +8,8 @@ const SPEED = 0.42
 
 const clamp = (value: number) => Math.min(1, Math.max(0, value))
 
+const imageUrl = (src: string) => `${import.meta.env.BASE_URL}${src}`
+
 type HeroGalleryProps = {
   // The hero section — scroll progress is measured against it
   sectionRef: RefObject<HTMLElement | null>
@@ -87,7 +89,15 @@ export function HeroGallery({ sectionRef }: HeroGalleryProps) {
     <div className="hero-gallery__column" ref={ref}>
       {photos.map((photo) => (
         <div key={photo.src} className="hero-gallery__photo" style={{ aspectRatio: photo.ratio }}>
-          <img src={`${import.meta.env.BASE_URL}${photo.src}`} alt="" />
+          <img
+            src={imageUrl(photo.src)}
+            // A small (320px) and a large (600px) version: the browser picks the one
+            // that fits the tile's size on screen, so phones download less
+            srcSet={`${imageUrl(photo.src.replace('.webp', '-320.webp'))} 320w, ${imageUrl(photo.src)} 600w`}
+            sizes="(min-width: 60rem) 300px, 50vw"
+            alt=""
+            decoding="async"
+          />
           <div className="hero-gallery__caption">
             <p className="hero-gallery__title">{photo.title}</p>
             <p className="hero-gallery__description">{photo.description}</p>
