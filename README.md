@@ -44,6 +44,6 @@ src/
 
 ## Credits
 
-Hero photo by [Nathan Dumlao](https://unsplash.com/@nate_dumlao) on
-[Unsplash](https://unsplash.com/photos/q3YZ4g7j9yc) (Unsplash License). To use your own
-photo, see the comment at the top of `src/components/Hero.tsx`.
+Hero photos are from [Unsplash](https://unsplash.com) (Unsplash License), including one by
+[Nathan Dumlao](https://unsplash.com/@nate_dumlao). The list lives in `src/data/heroPhotos.ts` —
+swap the IDs there to change the photos.

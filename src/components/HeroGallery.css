@@ -1,0 +1,43 @@
+.hero-gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  height: clamp(22rem, 58vh, 30rem);
+  overflow: hidden;
+  /* Photos fade softly in and out at the top and bottom edges */
+  mask-image: linear-gradient(transparent, #000 7%, #000 93%, transparent);
+  -webkit-mask-image: linear-gradient(transparent, #000 7%, #000 93%, transparent);
+  animation: fade-in 0.6s 0.1s ease both;
+}
+
+.hero-gallery__column {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  will-change: transform;
+}
+
+.hero-gallery__photo {
+  flex-shrink: 0;
+  overflow: hidden;
+  aspect-ratio: 4 / 5;
+  background: var(--color-brown-tint); /* shows while the photo loads */
+  border-radius: var(--radius-lg);
+}
+
+.hero-gallery__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (min-width: 60rem) {
+  .hero-gallery {
+    gap: 1rem;
+    height: min(calc(100svh - var(--header-height) - 4rem), 40rem);
+  }
+
+  .hero-gallery__column {
+    gap: 1rem;
+  }
+}
