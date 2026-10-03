@@ -19,7 +19,12 @@ export function ProjectCard({ project }: ProjectCardProps) {
     <article className="project-card">
       <div className="project-card__media">
         {image ? (
-          <img src={image} alt={imageAlt ?? `Screenshot of ${title}`} loading="lazy" />
+          // BASE_URL is '/portfolio/' so the image path works on GitHub Pages
+          <img
+            src={`${import.meta.env.BASE_URL}${image}`}
+            alt={imageAlt ?? `Screenshot of ${title}`}
+            loading="lazy"
+          />
         ) : (
           // Shown until a screenshot is added
           <div className="project-card__placeholder" aria-hidden="true">

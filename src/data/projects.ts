@@ -7,7 +7,7 @@ export type Project = {
   description: string
   technologies: string[]
   // Optional — add these when they're ready and the card will show them.
-  image?: string // put the file in /public/projects/ and use '/projects/file-name.png'
+  image?: string // put the file in /public/projects/ and use 'projects/file-name.png'
   imageAlt?: string
   githubUrl?: string
   liveUrl?: string

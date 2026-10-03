@@ -11,6 +11,12 @@ npm run build    # production build into /dist
 npm run preview  # preview the production build
 ```
 
+## Deployment
+
+The site is published with GitHub Pages at **https://ekareriua.github.io/portfolio/**.
+Every push to `main` rebuilds and redeploys it automatically
+(see `.github/workflows/deploy.yml`). Progress is shown in the repo's **Actions** tab.
+
 ## Where things live
 
 ```
@@ -28,7 +34,7 @@ src/
 
 - **Add a project:** copy the object in `src/data/projects.ts` and change the values.
 - **Add a screenshot:** put the image in `public/projects/` and set
-  `image: '/projects/your-file.png'` on the project.
+  `image: 'projects/your-file.png'` on the project (no leading slash).
 - **Add GitHub / demo links:** set `githubUrl` and `liveUrl` on the project.
 - **Add contact links:** fill in `src/data/links.ts`. Empty values show "Coming soon".
 - **Mark a skill as still learning:** set `learning: true` in `src/data/skills.ts`.
