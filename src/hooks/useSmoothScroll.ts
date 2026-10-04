@@ -5,6 +5,8 @@ const easeInOutCubic = (t: number) => (t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2
 
 // Makes in-page links (#about, #skills, #contact, the logo…) glide smoothly to
 // their section instead of jumping, with a soft start and a soft arrival.
+// Also handles arriving from another page with a section in the address
+// (e.g. ukate.uk/#contact from the 404 page).
 export function useSmoothScroll() {
   useEffect(() => {
     let frame = 0
@@ -30,18 +32,8 @@ export function useSmoothScroll() {
       cancelAnimationFrame(frame)
     }
 
-    function onClick(event: MouseEvent) {
-      // Leave cmd/ctrl-clicks (open in new tab) and other special clicks alone
-      if (event.defaultPrevented || event.button !== 0) return
-      if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return
-
-      const link = (event.target as Element).closest('a[href^="#"]')
-      const id = link?.getAttribute('href')?.slice(1)
-      const section = id ? document.getElementById(id) : null
-      if (!section) return
-
-      event.preventDefault()
-
+    // Glide to a section, keep the address bar in sync and move keyboard focus there
+    function goToSection(id: string, section: HTMLElement, updateAddress: boolean) {
       // Stop just below the sticky header (its height is the page's scroll-padding-top)
       const headerOffset = parseFloat(getComputedStyle(document.documentElement).scrollPaddingTop) || 0
       const sectionY = section.getBoundingClientRect().top + window.scrollY - headerOffset
@@ -53,11 +45,33 @@ export function useSmoothScroll() {
         glideTo(targetY)
       }
 
-      // Keep the address bar in sync and move keyboard focus to the section
-      history.pushState(null, '', `#${id}`)
+      if (updateAddress) history.pushState(null, '', `#${id}`)
       if (!section.hasAttribute('tabindex')) section.setAttribute('tabindex', '-1')
       section.focus({ preventScroll: true })
     }
+
+    function onClick(event: MouseEvent) {
+      // Leave cmd/ctrl-clicks (open in new tab) and other special clicks alone
+      if (event.defaultPrevented || event.button !== 0) return
+      if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return
+
+      const link = (event.target as Element).closest('a[href^="#"]')
+      const id = link?.getAttribute('href')?.slice(1)
+      const section = id ? document.getElementById(id) : null
+      if (!id || !section) return
+
+      event.preventDefault()
+      goToSection(id, section, true)
+    }
+
+    // Arrived with a section in the address (e.g. /#contact)? The page is built by
+    // JavaScript, so the browser couldn't find the section on load — go there now.
+    const initialId = decodeURIComponent(window.location.hash.slice(1))
+    const initialSection = initialId ? document.getElementById(initialId) : null
+    const initialTimer =
+      initialId && initialId !== 'home' && initialSection
+        ? window.setTimeout(() => goToSection(initialId, initialSection, false), 150)
+        : 0
 
     document.addEventListener('click', onClick)
     window.addEventListener('wheel', stop, { passive: true })
@@ -65,6 +79,7 @@ export function useSmoothScroll() {
     window.addEventListener('keydown', stop)
     return () => {
       cancelAnimationFrame(frame)
+      clearTimeout(initialTimer)
       document.removeEventListener('click', onClick)
       window.removeEventListener('wheel', stop)
       window.removeEventListener('touchstart', stop)
