@@ -1,3 +1,15 @@
+/* Layout for the extra pages (privacy, 404): the main content stretches to fill
+   the screen, so the footer always sits at the bottom even on short pages */
+.page-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100svh;
+}
+
+.page-layout > main {
+  flex: 1;
+}
+
 .page-bar__inner {
   display: flex;
   align-items: center;

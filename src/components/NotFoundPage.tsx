@@ -7,7 +7,7 @@ const home = import.meta.env.BASE_URL
 // Shown for any address that doesn't exist on the site
 export function NotFoundPage() {
   return (
-    <>
+    <div className="page-layout">
       <PageBar />
 
       <main className="container not-found">
@@ -30,6 +30,6 @@ export function NotFoundPage() {
       </main>
 
       <Footer />
-    </>
+    </div>
   )
 }

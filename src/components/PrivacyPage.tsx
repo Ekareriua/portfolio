@@ -8,7 +8,7 @@ const lastUpdated = '4 October 2026'
 
 export function PrivacyPage() {
   return (
-    <>
+    <div className="page-layout">
       <PageBar />
 
       <main className="container privacy">
@@ -36,6 +36,6 @@ export function PrivacyPage() {
       </main>
 
       <Footer />
-    </>
+    </div>
   )
 }
